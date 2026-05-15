@@ -1,88 +1,268 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Natalie Rushman Photography | Instagram Intelligence Dashboard</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>CreatorIntel — Natalie Rushman Photography</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600;700&family=Noto+Serif+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <main class="page">
-    <section class="hero card">
-      <div class="eyebrow">Luxury creator intelligence</div>
-      <h1>Natalie Rushman Photography</h1>
-      <p class="lede">A 48-hour Instagram intelligence dashboard for luxury hospitality, travel, and lifestyle content strategy.</p>
-      <div class="pills">
-        <span>Public dashboard</span>
-        <span>Notion embeddable</span>
-        <span>Cloudflare Pages</span>
-        <span>48-hour refresh</span>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="topnav-left">
+      <span class="nav-brand">IMPACT</span>
+      <span class="nav-divider">|</span>
+      <span class="nav-item active">Creator Intel</span>
+      <span class="nav-item">Hook Engine</span>
+      <span class="nav-item">Watchlist</span>
+      <span class="nav-item">Sources</span>
+    </div>
+    <div class="topnav-right">
+      <span class="live-dot"></span>
+      <span class="live-label" id="live-label">Live · loading...</span>
+    </div>
+  </div>
+</nav>
+
+<main class="page">
+
+  <section class="hero-section">
+    <div class="hero-meta">
+      <span class="date-chip" id="date-chip">loading...</span>
+      <span class="refresh-chip">auto-generated every Sunday night ✦</span>
+    </div>
+    <h1 class="hero-title">What's working <em>right now</em><br>across your <em id="creator-count">42</em> creator watchlist.</h1>
+    <p class="hero-sub">These tools, one view. Live creator signal from Instagram. A fresh weekly analysis for <strong>@natalierushmanphotography</strong> — auto-generated every Sunday night.</p>
+    <div class="stat-row" id="stat-row"></div>
+  </section>
+
+  <div class="section-label">
+    <span class="section-tag">THREE TOOLS, ONE DASHBOARD</span>
+    <h2 class="section-name">Your content <em>operating system</em></h2>
+    <p class="section-desc">Each tool answers a different question. Together, they show you what to watch, what to write, and what happened.</p>
+  </div>
+
+  <section class="three-panels">
+    <div class="panel">
+      <div class="panel-icon">📈</div>
+      <div class="panel-title">What's working right now</div>
+      <div class="panel-desc">Live pattern map across all 42 creators. Shows which themes, hooks, formats, and topics are pulling real engagement in the last 48 hours, formats, and topics generated for you.</div>
+    </div>
+    <div class="panel">
+      <div class="panel-icon">🎯</div>
+      <div class="panel-title">What's actually pulling views</div>
+      <div class="panel-desc">Digs deeper into specific post mechanics sorted by median engagement, baseline multipliers, and hook types. 3 hooks generated for you.</div>
+    </div>
+    <div class="panel">
+      <div class="panel-icon">📊</div>
+      <div class="panel-title">Your week, in numbers</div>
+      <div class="panel-desc">Posts tracked, engagement rates, baseline comparisons, and trending conversations with links and commentary generated for you.</div>
+    </div>
+  </section>
+
+  <div class="section-label">
+    <span class="section-tag section-tag-num">01 / PATTERN INTEL BRIEF</span>
+    <h2 class="section-name">Pattern map — <em>last 48 hours</em></h2>
+    <p class="section-desc">Summary of what your 42 creators are sharing and how high it's ranking. <span class="link-style">What does this mean? ↗</span></p>
+  </div>
+
+  <div class="pattern-grid">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Top themes</span>
+        <span class="badge badge-green">RANKED</span>
+        <span class="badge badge-muted">LAST 48H</span>
       </div>
-    </section>
+      <div id="top-themes-list"></div>
+    </div>
+    <div class="card-stack">
+      <div class="card half-card">
+        <div class="card-header">
+          <span class="card-title">Hook types</span>
+          <span class="badge badge-purple">RANKED</span>
+          <span class="badge badge-muted">ALL FORMATS</span>
+        </div>
+        <div id="hook-types-list"></div>
+      </div>
+      <div class="card half-card">
+        <div class="card-header">
+          <span class="card-title">Formats</span>
+          <span class="badge badge-blue">COUNT</span>
+          <span class="badge badge-muted">ALL CREATORS</span>
+        </div>
+        <div id="formats-list"></div>
+      </div>
+    </div>
+  </div>
 
-    <section class="grid two">
-      <article class="card">
-        <h2>Overview</h2>
-        <div id="overview-metrics" class="metrics"></div>
-      </article>
+  <div class="card whats-working-card">
+    <div class="card-header">
+      <span class="card-title">What's working right now</span>
+      <span class="badge badge-green">ABOVE BASELINE</span>
+      <span class="badge badge-muted">LAST 7 DAYS</span>
+    </div>
+    <p class="card-sub">Posts significantly outperforming each creator's personal median. Multiplier shown vs. their baseline.</p>
+    <div id="top-performers-list"></div>
+  </div>
 
-      <article class="card">
-        <h2>Watchlist summary</h2>
-        <div id="watchlist-summary" class="text-block"></div>
-      </article>
-    </section>
+  <div class="two-col-grid">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Saturated</span>
+        <span class="badge badge-red">OVEREXPOSED</span>
+        <span class="badge badge-muted">AVOID FOR NOW</span>
+      </div>
+      <div id="saturated-list"></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Underused</span>
+        <span class="badge badge-green">OPEN LANE</span>
+        <span class="badge badge-muted">HIGH OPPORTUNITY</span>
+      </div>
+      <div id="underused-list"></div>
+    </div>
+  </div>
 
-    <section class="grid three">
-      <article class="card">
-        <h2>Top performers</h2>
-        <div id="top-performers"></div>
-      </article>
-      <article class="card">
-        <h2>Top converters</h2>
-        <div id="top-converters"></div>
-      </article>
-      <article class="card">
-        <h2>Dominant themes</h2>
-        <div id="dominant-themes"></div>
-      </article>
-    </section>
+  <div class="section-label">
+    <span class="section-tag section-tag-num">02 / TOP PERFORMANCE BRIEF</span>
+    <h2 class="section-name">What's actually <em>pulling views</em></h2>
+    <p class="section-desc">Ranked by above-median engagement across your watchlist. Plus opening formulas that are working and 3 hooks generated for you.</p>
+  </div>
 
-    <section class="grid two">
-      <article class="card">
-        <h2>Hook types</h2>
-        <div id="hook-types"></div>
-      </article>
-      <article class="card">
-        <h2>Format mix</h2>
-        <div id="format-mix"></div>
-      </article>
-    </section>
+  <div class="two-col-grid">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Effectiveness dashboard</span>
+        <span class="badge badge-yellow">RANKED</span>
+      </div>
+      <p class="card-sub">Average engagement multiplier vs. creator baseline by hook type.</p>
+      <div id="effectiveness-list"></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Trend tracker</span>
+        <span class="badge badge-blue">WEEKLY DELTA</span>
+      </div>
+      <p class="card-sub">Theme momentum — rising or falling vs. last week.</p>
+      <div id="trend-tracker-list"></div>
+      <div class="your-account-box">
+        <div class="your-account-label">Your account <span class="badge badge-muted">TO CONNECT</span></div>
+        <div id="your-account-grid" class="your-account-grid"></div>
+        <div class="your-account-note">Connect <strong>@natalierushmanphotography</strong> via the Meta API to enable this ↓ <span class="link-style">Enable now</span></div>
+      </div>
+    </div>
+  </div>
 
-    <section class="grid two">
-      <article class="card">
-        <h2>Saturated lanes</h2>
-        <div id="saturated-lanes"></div>
-      </article>
-      <article class="card">
-        <h2>Underused lanes</h2>
-        <div id="underused-lanes"></div>
-      </article>
-    </section>
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Opening formulas</span>
+      <span class="badge badge-yellow">RANKED</span>
+    </div>
+    <p class="card-sub">Which opening lines are pulling views in your niche this cycle — ranked by engagement performance across the watchlist.</p>
+    <div id="opening-formulas-list"></div>
+  </div>
 
-    <section class="card">
-      <h2>Recent post gallery</h2>
-      <div id="post-gallery" class="gallery"></div>
-    </section>
+  <div class="section-label">
+    <span class="section-tag section-tag-num">HOOK ENGINE</span>
+    <h2 class="section-name">3 high-probability hooks for you, <em>generated from this cycle's winners</em></h2>
+  </div>
 
-    <section class="card">
-      <h2>Opportunity brief</h2>
-      <div id="opportunity-brief" class="text-block"></div>
-    </section>
-  </main>
+  <div class="three-hooks-grid" id="three-hooks-grid"></div>
 
-  <script src="app.js"></script>
+  <div class="section-label">
+    <span class="section-tag section-tag-num">03 / TOP PERFORMING POSTS</span>
+    <h2 class="section-name">Posts <em>above baseline</em> this week</h2>
+    <p class="section-desc">These posts are significantly outperforming their creator's median. Embedded from the original Instagram post.</p>
+  </div>
+
+  <div class="posts-grid" id="posts-grid"></div>
+
+  <div class="section-label">
+    <span class="section-tag section-tag-num">04 / AUDIO INTELLIGENCE</span>
+    <h2 class="section-name">Trending <em>audio</em> in your niche</h2>
+    <p class="section-desc">Sounds appearing across multiple creators this week — a signal the audio has momentum in your specific niche.</p>
+  </div>
+
+  <div class="card">
+    <div id="audio-trends-list"></div>
+  </div>
+
+  <div class="section-label" style="margin-top:56px">
+    <span class="section-tag section-tag-num">SOURCES</span>
+    <h2 class="section-name">Where the data <em>comes from</em></h2>
+    <p class="section-desc">Every number on this page has a method, a source, and a refresh cadence — and this section keeps that honest.</p>
+  </div>
+
+  <div class="sources-grid">
+    <div class="source-card">
+      <div class="source-label">DATA SOURCE · PUBLIC POSTS</div>
+      <div class="source-title">Watchlist scan of public posts</div>
+      <div class="source-desc">Apify Instagram Post Scraper pulls public posts from all 42 watchlist accounts. Returns captions, likes, comment counts, view counts, timestamps, audio metadata, and post URLs. Last 25 posts per creator per run. Only public accounts are scraped.</div>
+      <div class="source-meta">42 creators · 25 posts each · ~1,050 posts per run · Refreshed weekly</div>
+    </div>
+    <div class="source-card">
+      <div class="source-label">DATA SOURCE · REEL TRANSCRIPTS</div>
+      <div class="source-title">Median engagement, not raw views</div>
+      <div class="source-desc">Apify Instagram Reel Scraper pulls transcripts for reels with spoken audio (hasAudio = true). Music-only reels are skipped. All engagement figures are shown as a multiplier vs. each creator's personal median — not raw like counts — so a small creator and a large one can be compared fairly.</div>
+      <div class="source-meta">Spoken-audio reels only · Baseline = creator median · 7-day window</div>
+    </div>
+    <div class="source-card">
+      <div class="source-label">DATA SOURCE · TEXT DETECTION</div>
+      <div class="source-title">On-screen text extraction</div>
+      <div class="source-desc">Google Vision API Document Text Detection runs on carousel cover slides and reel thumbnails only. Detects hook text overlays that don't appear in captions. Single-image posts and music-only reels are skipped. OCR text is used as one signal alongside caption and transcript data.</div>
+      <div class="source-meta">Carousel covers + reel thumbnails · 1,000 free requests/month · Skipped if no text detected</div>
+    </div>
+  </div>
+
+  <div class="sources-citations">
+    <div class="citation-label">Citations on this page</div>
+    <div id="citations-list"></div>
+  </div>
+
+  <div class="section-label" style="margin-top:48px">
+    <h2 class="section-name">How this <em>dashboard is built</em></h2>
+  </div>
+
+  <div class="how-built-grid">
+    <div class="how-built-steps">
+      <div class="step"><div class="step-num">01</div><div class="step-content"><div class="step-title">Collect</div><div class="step-desc">GitHub Actions runs every Sunday at midnight UTC. Apify Post Scraper and Reel Scraper pull public posts and reel transcripts from all 42 watchlist accounts.</div></div></div>
+      <div class="step"><div class="step-num">02</div><div class="step-content"><div class="step-title">Classify</div><div class="step-desc">Google Vision API Document Text Detection runs on carousel covers and reel thumbnails. Spoken audio transcripts from Reel Scraper are parsed for opening lines and hook text.</div></div></div>
+      <div class="step"><div class="step-num">03</div><div class="step-content"><div class="step-title">Score</div><div class="step-desc">Each post is scored against the creator's personal median. Posts exceeding baseline by 2x or more are flagged as top performers. Hook types are categorised and ranked by average multiplier.</div></div></div>
+      <div class="step"><div class="step-num">04</div><div class="step-content"><div class="step-title">Analyse</div><div class="step-desc">The enriched JSON is reviewed in a Claude chat session. Full analysis of themes, hooks, open lanes, trend momentum, and 3 custom hooks in Natalie's voice is saved to the results file.</div></div></div>
+      <div class="step"><div class="step-num">05</div><div class="step-content"><div class="step-title">Publish</div><div class="step-desc">Results JSON is committed to GitHub. Vercel detects the commit and redeploys the dashboard in ~30 seconds. The Notion embed updates automatically.</div></div></div>
+    </div>
+    <div class="how-built-sidebar">
+      <div class="built-tag">Raw method</div>
+      <div class="built-code">
+        <div class="code-line"><span class="code-comment">// GitHub Actions scheduler</span></div>
+        <div class="code-line"><span class="code-key">cron:</span> <span class="code-val">'0 0 * * 0'</span></div>
+        <div class="code-line"><span class="code-comment">// Every Sunday midnight UTC</span></div>
+        <div class="code-line">&nbsp;</div>
+        <div class="code-line"><span class="code-comment">// Data layer</span></div>
+        <div class="code-line"><span class="code-key">scrapers:</span> <span class="code-val">Apify</span></div>
+        <div class="code-line"><span class="code-key">ocr:</span> <span class="code-val">Google Vision API</span></div>
+        <div class="code-line">&nbsp;</div>
+        <div class="code-line"><span class="code-comment">// Analysis</span></div>
+        <div class="code-line"><span class="code-key">analysis:</span> <span class="code-val">Claude (chat)</span></div>
+        <div class="code-line">&nbsp;</div>
+        <div class="code-line"><span class="code-comment">// Display</span></div>
+        <div class="code-line"><span class="code-key">hosting:</span> <span class="code-val">Vercel (free)</span></div>
+        <div class="code-line"><span class="code-key">embed:</span> <span class="code-val">Notion iframe</span></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span class="footer-brand">IMPACT</span>
+    <span class="footer-copy">CreatorIntel · Built for @natalierushmanphotography · Refreshes every Sunday night · <span id="footer-date"></span></span>
+  </footer>
+
+</main>
+<script src="app.js"></script>
 </body>
 </html>
