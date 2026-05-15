@@ -1,0 +1,60 @@
+name: Weekly Creator Intelligence Pipeline
+
+on:
+  # Runs every Sunday at midnight UTC
+  schedule:
+    - cron: '0 0 * * 0'
+  # Also allows manual trigger from GitHub Actions tab
+  workflow_dispatch:
+
+jobs:
+  scrape-and-prepare:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+
+      # ── 1. CHECK OUT REPO ──────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── 2. SET UP NODE ────────────────────────────────────────────
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # ── 3. INSTALL DEPENDENCIES ───────────────────────────────────
+      - name: Install dependencies
+        run: npm install
+
+      # ── 4. RUN APIFY SCRAPERS + GOOGLE VISION OCR ─────────────────
+      - name: Run scraper pipeline
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          GOOGLE_VISION_KEY: ${{ secrets.GOOGLE_VISION_KEY }}
+        run: node pipeline/scrape.js
+
+      # ── 5. SAVE ENRICHED DATA FOR MANUAL CLAUDE ANALYSIS ──────────
+      # The scrape.js script writes enriched-data.json to the repo.
+      # You paste enriched-data.json into Claude chat and run the
+      # weekly analysis prompt. Claude returns structured JSON which
+      # you save as analysis.json and commit. Vercel auto-redeploys.
+      #
+      # OPTIONAL: When you add your Anthropic API key as a secret,
+      # uncomment the step below to make analysis fully automatic.
+
+      # - name: Run Claude analysis (auto)
+      #   env:
+      #     ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      #   run: node pipeline/analyse.js
+
+      # ── 6. COMMIT ENRICHED DATA ───────────────────────────────────
+      - name: Commit enriched data to repo
+        run: |
+          git config --global user.name "CreatorIntel Bot"
+          git config --global user.email "bot@creatorintel"
+          git add enriched-data.json
+          git diff --staged --quiet || git commit -m "Weekly enriched data — $(date -u '+%Y-%m-%d')"
+          git push
