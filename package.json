@@ -1,0 +1,14 @@
+{
+  "name": "creatorintel",
+  "version": "1.0.0",
+  "description": "CreatorIntel — Natalie Rushman Photography weekly competitor analysis pipeline",
+  "private": true,
+  "scripts": {
+    "scrape": "node pipeline/scrape.js",
+    "analyse": "node pipeline/analyse.js"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=20"
+  }
+}
