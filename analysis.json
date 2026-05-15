@@ -1,0 +1,6 @@
+{
+  "_instructions": "This file is written by the weekly GitHub Actions pipeline. To update manually: paste your Apify JSON into a Claude chat session, run the weekly analysis prompt, and paste the structured output here. Commit and push — Vercel redeploys automatically.",
+  "_last_updated": "awaiting first pipeline run",
+  "_cycle": "awaiting first pipeline run",
+  "_status": "sample_data"
+}
