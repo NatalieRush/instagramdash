@@ -28,17 +28,29 @@
   </div>
 </nav>
 
+<!-- Data quality banner — hidden when no notes -->
+<div id="data-quality-banner" class="dq-banner" style="display:none"></div>
+
 <main class="page">
 
   <section class="hero-section">
     <div class="hero-meta">
       <span class="date-chip" id="date-chip">loading...</span>
-      <span class="refresh-chip">auto-generated every Sunday night ✦</span>
+      <span class="refresh-chip">auto-generated every two weeks ✦</span>
     </div>
     <h1 class="hero-title">What's working <em>right now</em><br>across your <em id="creator-count">42</em> creator watchlist.</h1>
-    <p class="hero-sub">These tools, one view. Live creator signal from Instagram. A fresh weekly analysis for <strong>@natalierushmanphotography</strong> — auto-generated every Sunday night.</p>
+    <p class="hero-sub">Three tools, one view. Live creator signal from Instagram — a fresh bi-weekly analysis for <strong>@natalierushmanphotography</strong>.</p>
     <div class="stat-row" id="stat-row"></div>
   </section>
+
+  <!-- Additional metrics strip -->
+  <div class="card additional-metrics-card">
+    <div class="card-header">
+      <span class="card-title">Cycle snapshot</span>
+      <span class="badge badge-muted">COMPUTED</span>
+    </div>
+    <div id="additional-metrics" class="additional-metrics-grid"></div>
+  </div>
 
   <div class="section-label">
     <span class="section-tag">THREE TOOLS, ONE DASHBOARD</span>
@@ -50,24 +62,24 @@
     <div class="panel">
       <div class="panel-icon">📈</div>
       <div class="panel-title">What's working right now</div>
-      <div class="panel-desc">Live pattern map across all 42 creators. Shows which themes, hooks, formats, and topics are pulling real engagement in the last 48 hours, formats, and topics generated for you.</div>
+      <div class="panel-desc">Pattern map across all watchlist creators. Shows which themes, hooks, and formats are pulling real engagement this bi-weekly cycle.</div>
     </div>
     <div class="panel">
       <div class="panel-icon">🎯</div>
       <div class="panel-title">What's actually pulling views</div>
-      <div class="panel-desc">Digs deeper into specific post mechanics sorted by median engagement, baseline multipliers, and hook types. 3 hooks generated for you.</div>
+      <div class="panel-desc">Specific post mechanics sorted by baseline multipliers and hook types — with 3 hooks generated in your voice.</div>
     </div>
     <div class="panel">
       <div class="panel-icon">📊</div>
-      <div class="panel-title">Your week, in numbers</div>
-      <div class="panel-desc">Posts tracked, engagement rates, baseline comparisons, and trending conversations with links and commentary generated for you.</div>
+      <div class="panel-title">Your cycle, in numbers</div>
+      <div class="panel-desc">Posts tracked, engagement rates, baseline comparisons, and trending conversations with links and commentary.</div>
     </div>
   </section>
 
   <div class="section-label">
     <span class="section-tag section-tag-num">01 / PATTERN INTEL BRIEF</span>
-    <h2 class="section-name">Pattern map — <em>last 48 hours</em></h2>
-    <p class="section-desc">Summary of what your 42 creators are sharing and how high it's ranking. <span class="link-style">What does this mean? ↗</span></p>
+    <h2 class="section-name">Pattern map — <em>all posts this cycle</em></h2>
+    <p class="section-desc">What your watchlist creators are posting and how it's performing. Themes link to the posts that contributed to them. Hook types include real examples linked back to source.</p>
   </div>
 
   <div class="pattern-grid">
@@ -75,7 +87,7 @@
       <div class="card-header">
         <span class="card-title">Top themes</span>
         <span class="badge badge-green">RANKED</span>
-        <span class="badge badge-muted">LAST 48H</span>
+        <span class="badge badge-muted">ALL POSTS</span>
       </div>
       <div id="top-themes-list"></div>
     </div>
@@ -84,7 +96,7 @@
         <div class="card-header">
           <span class="card-title">Hook types</span>
           <span class="badge badge-purple">RANKED</span>
-          <span class="badge badge-muted">ALL FORMATS</span>
+          <span class="badge badge-muted">WITH EXAMPLES</span>
         </div>
         <div id="hook-types-list"></div>
       </div>
@@ -103,9 +115,9 @@
     <div class="card-header">
       <span class="card-title">What's working right now</span>
       <span class="badge badge-green">ABOVE BASELINE</span>
-      <span class="badge badge-muted">LAST 7 DAYS</span>
+      <span class="badge badge-muted">THIS CYCLE</span>
     </div>
-    <p class="card-sub">Posts significantly outperforming each creator's personal median. Multiplier shown vs. their baseline.</p>
+    <p class="card-sub">Posts significantly outperforming each creator's personal median. Multiplier is calculated against that creator's median across all posts in the dataset — post count shown. Click any caption to view the original post.</p>
     <div id="top-performers-list"></div>
   </div>
 
@@ -131,7 +143,7 @@
   <div class="section-label">
     <span class="section-tag section-tag-num">02 / TOP PERFORMANCE BRIEF</span>
     <h2 class="section-name">What's actually <em>pulling views</em></h2>
-    <p class="section-desc">Ranked by above-median engagement across your watchlist. Plus opening formulas that are working and 3 hooks generated for you.</p>
+    <p class="section-desc">Opening formulas ranked by niche-wide engagement performance — not per-creator. Formulas that work across multiple creators carry more signal. Plus 3 hooks generated in your voice.</p>
   </div>
 
   <div class="two-col-grid">
@@ -140,20 +152,20 @@
         <span class="card-title">Effectiveness dashboard</span>
         <span class="badge badge-yellow">RANKED</span>
       </div>
-      <p class="card-sub">Average engagement multiplier vs. creator baseline by hook type.</p>
+      <p class="card-sub">Average engagement multiplier vs. creator baseline, by hook type.</p>
       <div id="effectiveness-list"></div>
     </div>
     <div class="card">
       <div class="card-header">
         <span class="card-title">Trend tracker</span>
-        <span class="badge badge-blue">WEEKLY DELTA</span>
+        <span class="badge badge-blue">BI-WEEKLY DELTA</span>
       </div>
-      <p class="card-sub">Theme momentum — rising or falling vs. last week.</p>
+      <p class="card-sub">Theme momentum — rising or falling vs. last cycle.</p>
       <div id="trend-tracker-list"></div>
       <div class="your-account-box">
         <div class="your-account-label">Your account <span class="badge badge-muted">TO CONNECT</span></div>
         <div id="your-account-grid" class="your-account-grid"></div>
-        <div class="your-account-note">Connect <strong>@natalierushmanphotography</strong> via the Meta API to enable this ↓ <span class="link-style">Enable now</span></div>
+        <div class="your-account-note">Connect <strong>@natalierushmanphotography</strong> via the Meta API to enable this · <span class="link-style">Enable now</span></div>
       </div>
     </div>
   </div>
@@ -161,23 +173,23 @@
   <div class="card">
     <div class="card-header">
       <span class="card-title">Opening formulas</span>
-      <span class="badge badge-yellow">RANKED</span>
+      <span class="badge badge-yellow">NICHE-WIDE RANKING</span>
     </div>
-    <p class="card-sub">Which opening lines are pulling views in your niche this cycle — ranked by engagement performance across the watchlist.</p>
+    <p class="card-sub">Opening lines ranked by their engagement multiplier across the full dataset — not just their creator's account. Formulas that perform above baseline for multiple creators are weighted highest. Click any formula to view the source post.</p>
     <div id="opening-formulas-list"></div>
   </div>
 
   <div class="section-label">
     <span class="section-tag section-tag-num">HOOK ENGINE</span>
-    <h2 class="section-name">3 high-probability hooks for you, <em>generated from this cycle's winners</em></h2>
+    <h2 class="section-name">3 high-probability hooks, <em>generated from this cycle's winners</em></h2>
   </div>
 
   <div class="three-hooks-grid" id="three-hooks-grid"></div>
 
   <div class="section-label">
     <span class="section-tag section-tag-num">03 / TOP PERFORMING POSTS</span>
-    <h2 class="section-name">Posts <em>above baseline</em> this week</h2>
-    <p class="section-desc">These posts are significantly outperforming their creator's median. Embedded from the original Instagram post.</p>
+    <h2 class="section-name">Posts <em>above baseline</em> this cycle</h2>
+    <p class="section-desc">The highest-multiplier posts from your watchlist — embedded from the original Instagram post. Click the creator handle to visit their profile.</p>
   </div>
 
   <div class="posts-grid" id="posts-grid"></div>
@@ -185,7 +197,7 @@
   <div class="section-label">
     <span class="section-tag section-tag-num">04 / AUDIO INTELLIGENCE</span>
     <h2 class="section-name">Trending <em>audio</em> in your niche</h2>
-    <p class="section-desc">Sounds appearing across multiple creators this week — a signal the audio has momentum in your specific niche.</p>
+    <p class="section-desc">Sounds appearing across watchlist creators this cycle. Click any track to find it on Spotify. Rising = disproportionately represented in top-performing posts.</p>
   </div>
 
   <div class="card">
@@ -195,27 +207,27 @@
   <div class="section-label" style="margin-top:56px">
     <span class="section-tag section-tag-num">SOURCES</span>
     <h2 class="section-name">Where the data <em>comes from</em></h2>
-    <p class="section-desc">Every number on this page has a method, a source, and a refresh cadence — and this section keeps that honest.</p>
+    <p class="section-desc">Every number on this page has a method, a source, and a refresh cadence.</p>
   </div>
 
   <div class="sources-grid">
     <div class="source-card">
       <div class="source-label">DATA SOURCE · PUBLIC POSTS</div>
       <div class="source-title">Watchlist scan of public posts</div>
-      <div class="source-desc">Apify Instagram Post Scraper pulls public posts from all 42 watchlist accounts. Returns captions, likes, comment counts, view counts, timestamps, audio metadata, and post URLs. Last 25 posts per creator per run. Only public accounts are scraped.</div>
-      <div class="source-meta">42 creators · 25 posts each · ~1,050 posts per run · Refreshed weekly</div>
+      <div class="source-desc">Apify Instagram Post Scraper pulls public posts from all watchlist accounts. Returns captions, likes, comment counts, view counts, timestamps, audio metadata, and post URLs. Last 25 posts per creator per run. Only public accounts are scraped.</div>
+      <div class="source-meta">42 creators · 25 posts each · ~1,050 posts per run · Refreshed bi-weekly</div>
     </div>
     <div class="source-card">
-      <div class="source-label">DATA SOURCE · REEL TRANSCRIPTS</div>
+      <div class="source-label">DATA SOURCE · BASELINE METHODOLOGY</div>
       <div class="source-title">Median engagement, not raw views</div>
-      <div class="source-desc">Apify Instagram Reel Scraper pulls transcripts for reels with spoken audio (hasAudio = true). Music-only reels are skipped. All engagement figures are shown as a multiplier vs. each creator's personal median — not raw like counts — so a small creator and a large one can be compared fairly.</div>
-      <div class="source-meta">Spoken-audio reels only · Baseline = creator median · 7-day window</div>
+      <div class="source-desc">All engagement figures are shown as a multiplier vs. each creator's personal median across all posts in the bi-weekly dataset. A small creator and a large one can be compared fairly. The post count used to calculate each baseline is shown alongside the multiplier.</div>
+      <div class="source-meta">Baseline = creator median · All posts in dataset · Bi-weekly window</div>
     </div>
     <div class="source-card">
       <div class="source-label">DATA SOURCE · TEXT DETECTION</div>
       <div class="source-title">On-screen text extraction</div>
-      <div class="source-desc">Google Vision API Document Text Detection runs on carousel cover slides and reel thumbnails only. Detects hook text overlays that don't appear in captions. Single-image posts and music-only reels are skipped. OCR text is used as one signal alongside caption and transcript data.</div>
-      <div class="source-meta">Carousel covers + reel thumbnails · 1,000 free requests/month · Skipped if no text detected</div>
+      <div class="source-desc">Google Vision API Document Text Detection runs on carousel cover slides and reel thumbnails. Detects hook text overlays that don't appear in captions. OCR text is combined with caption and transcript data to identify hook type.</div>
+      <div class="source-meta">Carousel covers + reel thumbnails · 1,000 free requests/month</div>
     </div>
   </div>
 
@@ -230,18 +242,18 @@
 
   <div class="how-built-grid">
     <div class="how-built-steps">
-      <div class="step"><div class="step-num">01</div><div class="step-content"><div class="step-title">Collect</div><div class="step-desc">GitHub Actions runs every Sunday at midnight UTC. Apify Post Scraper and Reel Scraper pull public posts and reel transcripts from all 42 watchlist accounts.</div></div></div>
-      <div class="step"><div class="step-num">02</div><div class="step-content"><div class="step-title">Classify</div><div class="step-desc">Google Vision API Document Text Detection runs on carousel covers and reel thumbnails. Spoken audio transcripts from Reel Scraper are parsed for opening lines and hook text.</div></div></div>
-      <div class="step"><div class="step-num">03</div><div class="step-content"><div class="step-title">Score</div><div class="step-desc">Each post is scored against the creator's personal median. Posts exceeding baseline by 2x or more are flagged as top performers. Hook types are categorised and ranked by average multiplier.</div></div></div>
-      <div class="step"><div class="step-num">04</div><div class="step-content"><div class="step-title">Analyse</div><div class="step-desc">The enriched JSON is reviewed in a Claude chat session. Full analysis of themes, hooks, open lanes, trend momentum, and 3 custom hooks in Natalie's voice is saved to the results file.</div></div></div>
-      <div class="step"><div class="step-num">05</div><div class="step-content"><div class="step-title">Publish</div><div class="step-desc">Results JSON is committed to GitHub. Vercel detects the commit and redeploys the dashboard in ~30 seconds. The Notion embed updates automatically.</div></div></div>
+      <div class="step"><div class="step-num">01</div><div class="step-content"><div class="step-title">Collect</div><div class="step-desc">GitHub Actions runs every other Sunday at midnight UTC. Apify Post Scraper pulls the last 25 public posts from all 42 watchlist accounts.</div></div></div>
+      <div class="step"><div class="step-num">02</div><div class="step-content"><div class="step-title">Classify</div><div class="step-desc">Google Vision API runs OCR on carousel covers and reel thumbnails. Spoken audio transcripts are parsed for opening lines and hook text.</div></div></div>
+      <div class="step"><div class="step-num">03</div><div class="step-content"><div class="step-title">Score</div><div class="step-desc">Each post is scored against the creator's personal median across all posts in the dataset. Posts exceeding 2x baseline are flagged as top performers.</div></div></div>
+      <div class="step"><div class="step-num">04</div><div class="step-content"><div class="step-title">Analyse</div><div class="step-desc">The enriched JSON is reviewed in a Claude chat session. Full analysis of themes, hooks, open lanes, trend momentum, and 3 custom hooks in Natalie's voice is returned as structured JSON.</div></div></div>
+      <div class="step"><div class="step-num">05</div><div class="step-content"><div class="step-title">Publish</div><div class="step-desc">analysis.json is committed to GitHub. Vercel detects the commit and redeploys in ~30 seconds. The Notion embed updates automatically.</div></div></div>
     </div>
     <div class="how-built-sidebar">
       <div class="built-tag">Raw method</div>
       <div class="built-code">
         <div class="code-line"><span class="code-comment">// GitHub Actions scheduler</span></div>
-        <div class="code-line"><span class="code-key">cron:</span> <span class="code-val">'0 0 * * 0'</span></div>
-        <div class="code-line"><span class="code-comment">// Every Sunday midnight UTC</span></div>
+        <div class="code-line"><span class="code-key">cron:</span> <span class="code-val">'0 0 1,15 * *'</span></div>
+        <div class="code-line"><span class="code-comment">// 1st and 15th of each month</span></div>
         <div class="code-line">&nbsp;</div>
         <div class="code-line"><span class="code-comment">// Data layer</span></div>
         <div class="code-line"><span class="code-key">scrapers:</span> <span class="code-val">Apify</span></div>
@@ -252,14 +264,14 @@
         <div class="code-line">&nbsp;</div>
         <div class="code-line"><span class="code-comment">// Display</span></div>
         <div class="code-line"><span class="code-key">hosting:</span> <span class="code-val">Vercel (free)</span></div>
-        <div class="code-line"><span class="code-key">embed:</span> <span class="code-val">Notion iframe</span></div>
+        <div class="code-line"><span class="code-key">embed:</span>   <span class="code-val">Notion iframe</span></div>
       </div>
     </div>
   </div>
 
   <footer class="footer">
     <span class="footer-brand">IMPACT</span>
-    <span class="footer-copy">CreatorIntel · Built for @natalierushmanphotography · Refreshes every Sunday night · <span id="footer-date"></span></span>
+    <span class="footer-copy">CreatorIntel · Built for @natalierushmanphotography · Refreshes bi-weekly · <span id="footer-date"></span></span>
   </footer>
 
 </main>
