@@ -179,7 +179,7 @@ async function main() {
   console.log('\n[1/4] Running Instagram Post Scraper...');
   const postRunId = await startApifyRun('apify~instagram-post-scraper', {
     directUrls: ALL_HANDLES.map(h => `https://www.instagram.com/${h}/`),
-    resultsLimit: 25,
+    resultsLimit: 20,
     addParentData: false
   });
   const postDatasetId = await waitForRun(postRunId);
@@ -198,7 +198,7 @@ async function main() {
   if (spokenReels.length > 0) {
     const reelUrls = spokenReels
       .map(p => p.url || `https://www.instagram.com/p/${p.shortCode}/`)
-      .slice(0, 200); // cap to stay within free tier
+      .slice(0, 350); // capped at 350 for weekly $1.25 budget
 
     const reelRunId = await startApifyRun('apify~instagram-reel-scraper', {
       directUrls: reelUrls,
