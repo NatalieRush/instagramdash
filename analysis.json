@@ -1,264 +1,259 @@
 {
   "meta": {
-    "generated": "2026-05-16T19:45:00.000Z",
+    "generated": "2026-05-16T12:00:00Z",
     "cycle": "May 1 – May 16, 2026",
-    "watchlist_count": 44,
-    "posts_analysed": 392,
-    "creators_active": 44,
-    "engagement_avg": "2.04x median baseline",
+    "watchlist_count": 417,
+    "posts_analysed": 994,
+    "creators_active": 85,
+    "engagement_avg": "N/A — no likes/comments in dataset",
     "data_notes": [
-      "9 reel scraper errors: sliceofpai, hayleykelsingphotography, novemberstudio.co, nicolasqnphotography (post data present), vanessadaylife, theremoteconcept, augustopro (post data present), therollinson, birch — returned empty or private data.",
-      "Thin baseline (1 post): saporiumchiusdino, publichousegroup, cooop.co, sliceofpai, hannahsukwanders, jasoncharleshill, labyrinthevents, thelibraguide, seventhhouseacademy — multipliers for these creators are directional signals only.",
-      "Thin baseline (2 posts): monsieur.jim, reschiocollections, thehoxtonhotel — treat multipliers as indicative.",
-      "seventhhousemarketing baseline median is very low (16 interactions) due to account being primarily a low-engagement brand account with two viral outliers; their 55x and 52x multipliers reflect a genuine spike but should be read with that context.",
-      "dpc_photography_ and augustopro appear in post dataset but returned no reel data."
+      "This dataset contains caption, URL, and owner metadata only. No likes, comments, or view counts were exported. Engagement multipliers cannot be calculated. Top performers and opening formula scores are derived from hook-type strategic signal and caption depth as proxies. Treat all multiplier values as illustrative estimates, not measured data.",
+      "285 creators appear with only 1 post — baseline calculations for these accounts are not possible. 47 creators appear with 2 posts — thin baseline, directional only.",
+      "Audio metadata was not included in the export. Audio trends section returns empty array.",
+      "Format detection is URL-based (/reel/ vs /p/). No carousel vs single-image distinction is possible from this data — all non-reel posts are grouped as Image/Carousel."
     ]
   },
   "stats": [
-    { "num": "392",  "sup": null, "label": "Posts tracked" },
-    { "num": "26",   "sup": null, "label": "Creators above baseline" },
-    { "num": "2.04x","sup": null, "label": "Avg engagement rate" },
+    { "num": "994",  "sup": null, "label": "Posts tracked" },
+    { "num": "85",   "sup": null, "label": "Creators active (3+ posts)" },
+    { "num": "N/A",  "sup": null, "label": "Avg engagement rate" },
     { "num": "7",    "sup": null, "label": "Trend clusters" }
   ],
   "top_themes": [
     {
-      "label": "Luxury Hotel & Resort",
-      "count": 149,
+      "label": "Hotel & Accommodation",
+      "count": 498,
       "pct": 100,
       "posts": [
-        { "url": "https://www.instagram.com/p/DYKXSVljEmX/", "handle": "@rocioprezg",    "caption": "Mediterranean blues — hotel photography, Malaga" },
-        { "url": "https://www.instagram.com/p/DYKvUy0CPN0/", "handle": "@reschio",        "caption": "Seeming to hang on the precipice of the world, this pool at Reschio…" },
-        { "url": "https://www.instagram.com/p/DXjYNqsjGF3/", "handle": "@estellemanor",  "caption": "Our Riviera-inspired South Terrace is calling…" }
-      ]
-    },
-    {
-      "label": "Slow Living & Atmosphere",
-      "count": 91,
-      "pct": 61,
-      "posts": [
-        { "url": "https://www.instagram.com/p/DX08GAFMUGU/", "handle": "@thenewtinsomerset", "caption": "Soaking up the anticipation. Every day closer, every bit more deliciously immersive" },
-        { "url": "https://www.instagram.com/p/DYATnWWqXpb/", "handle": "@tenutadimurlo",    "caption": "slow mornings and dreamy nights. Save this hidden gem for your next vacation." },
-        { "url": "https://www.instagram.com/p/DYFfqdRjNwG/", "handle": "@rocioprezg",       "caption": "Golden hour turning ordinary moments into magical ones" }
-      ]
-    },
-    {
-      "label": "Photography Process & Craft",
-      "count": 43,
-      "pct": 29,
-      "posts": [
-        { "url": "https://www.instagram.com/p/DYXg1EYTRdB/", "handle": "@seventhhousemarketing", "caption": "POV: you're a fly on the wall at our @bala shoot day" },
-        { "url": "https://www.instagram.com/p/DX9gRxFs0h-/", "handle": "@rocioprezg",            "caption": "What is lifestyle photography for you?" },
-        { "url": "https://www.instagram.com/p/DX2wsmYknfN/", "handle": "@creativebykera",        "caption": "Ever wonder what goes into a professional brunch spread?" }
+        { "url": "https://www.instagram.com/reel/DPidGW2jH6N/", "handle": "@kelseyinlondon", "caption": "Beautiful wellness retreat in Austria — welcome to Stanglwirt, a five-star..." },
+        { "url": "https://www.instagram.com/p/DX_ebAQnzZw/", "handle": "@relaischateaux", "caption": "Good morning Tuscany. Wake to the sound of distant church bells and cicadas..." },
+        { "url": "https://www.instagram.com/reel/DYAdlAXKwZu/", "handle": "@lina.michy", "caption": "A hotel's digital presence is only as strong as its shot list." }
       ]
     },
     {
       "label": "Travel & Destination",
-      "count": 41,
-      "pct": 28,
+      "count": 255,
+      "pct": 51,
       "posts": [
-        { "url": "https://www.instagram.com/p/DYJsZU8zOgd/", "handle": "@joselyn.hana",         "caption": "Let's go hiking — Dolomites week" },
-        { "url": "https://www.instagram.com/p/DXqiw4BDHs0/", "handle": "@postcardsbyhannah",    "caption": "Comment GUIDE for my full, free Paros guide!" },
-        { "url": "https://www.instagram.com/p/DYMyYh8IA6L/", "handle": "@simplyslowtraveler",   "caption": "From this morning — Mallorca Digital Travel Guide launches end of May" }
+        { "url": "https://www.instagram.com/p/DXg91BLCEc5/", "handle": "@theslowtraveler", "caption": "Springtime in the south of France. Home away from home was Maison de Frederic..." },
+        { "url": "https://www.instagram.com/p/DYHDhpBDP2n/", "handle": "@kelseyinlondon", "caption": "The perfect 5-day itinerary for the beautiful island of Mallorca..." },
+        { "url": "https://www.instagram.com/reel/DYJ2pVaMDO_/", "handle": "@kelseyinlondon", "caption": "I think I found the best Airbnb with Eiffel Tower views in Paris..." }
       ]
     },
     {
-      "label": "Content Strategy & Creator Economy",
-      "count": 26,
+      "label": "Nature & Landscape",
+      "count": 85,
       "pct": 17,
       "posts": [
-        { "url": "https://www.instagram.com/p/DXWCi5GDXyq/", "handle": "@prettylittlemarketer", "caption": "the Instagram you knew is gone, and it's not the algorithm's fault" },
-        { "url": "https://www.instagram.com/p/DYNsIfaTphj/", "handle": "@seventhhousemarketing", "caption": "4am call time, sick team member, brand new out-of-state client" },
-        { "url": "https://www.instagram.com/p/DXR1lo-NWCW/", "handle": "@thecreative.social",   "caption": "I trained CLAUDE to create my content and in 3 months I gained 40k+ followers" }
-      ]
-    },
-    {
-      "label": "Lifestyle & Identity",
-      "count": 7,
-      "pct": 5,
-      "posts": [
-        { "url": "https://www.instagram.com/p/DXO9Ji0BjHS/", "handle": "@onbrandmag",      "caption": "McKinsey: by 2030, 45% of women 25-44 projected to be single and childfree" },
-        { "url": "https://www.instagram.com/p/DX4L04ACTXQ/", "handle": "@alexmanderstam", "caption": "Why are older women suddenly everywhere?" },
-        { "url": "https://www.instagram.com/p/DXosV2AAl2t/", "handle": "@alexmanderstam", "caption": "Let's talk about how status symbols are created" }
+        { "url": "https://www.instagram.com/p/DXzAGibERgy/", "handle": "@austinrutland", "caption": "A sunrise stroll through the tiny village of Castle Combe, UK..." },
+        { "url": "https://www.instagram.com/p/DPs64iRjEpF/", "handle": "@postcardsbyhannah", "caption": "What a difference a day makes — morning sunshine over the landscape..." },
+        { "url": "https://www.instagram.com/p/DX_ebAQnzZw/", "handle": "@relaischateaux", "caption": "Good morning Tuscany — aromas of sun-baked earth, wild herbs and cypress..." }
       ]
     },
     {
       "label": "Food & Dining",
-      "count": 3,
+      "count": 64,
+      "pct": 13,
+      "posts": [
+        { "url": "https://www.instagram.com/reel/DWVvQLUD13z/", "handle": "@kelseyinlondon", "caption": "Most beautiful restaurant in London — there aren't many restaurants with..." },
+        { "url": "https://www.instagram.com/p/DXg91BLCEc5/", "handle": "@theslowtraveler", "caption": "Springtime in the south of France — lunch at Maison de Frederic..." },
+        { "url": "https://www.instagram.com/reel/DXY69cQimaq/", "handle": "@orientexpresssailingyachts", "caption": "Multi-Michelin-Starred Chef Yannick Alléno creates a cuisine where precision meets instinct..." }
+      ]
+    },
+    {
+      "label": "Lifestyle & Aesthetic",
+      "count": 49,
+      "pct": 10,
+      "posts": [
+        { "url": "https://www.instagram.com/p/DYKXSVljEmX/", "handle": "@rocioprezg", "caption": "Mediterranean blues..." },
+        { "url": "https://www.instagram.com/p/DX_ebAQnzZw/", "handle": "@relaischateaux", "caption": "Summers at Borgo Pignano mean lazy days by the pool..." },
+        { "url": "https://www.instagram.com/p/DQi8vkhCa1d/", "handle": "@softervolumes", "caption": "From Tokyo to Marrakesh, cinematic stays reveal how architecture and light transform a room..." }
+      ]
+    },
+    {
+      "label": "Photography/Content Creation",
+      "count": 34,
+      "pct": 7,
+      "posts": [
+        { "url": "https://www.instagram.com/reel/DYAdlAXKwZu/", "handle": "@lina.michy", "caption": "A hotel's digital presence is only as strong as its shot list." },
+        { "url": "https://www.instagram.com/reel/DWim8PmgQCI/", "handle": "@ulterior_visuals", "caption": "Most videos don't look cheap because of your camera — they look cheap because of how you move it." },
+        { "url": "https://www.instagram.com/p/DTk7Hp2Auvf/", "handle": "@cmcg.creative", "caption": "How I shoot staycation content. Photo, video & UGC (save this)" }
+      ]
+    },
+    {
+      "label": "Wellness & Leisure",
+      "count": 9,
       "pct": 2,
       "posts": [
-        { "url": "https://www.instagram.com/p/DXS0ZGTkwHo/", "handle": "@creativebykera", "caption": "Golden hour, salty air, and a table full of the good stuff — Hotel Steyne shoot" }
+        { "url": "https://www.instagram.com/reel/DPidGW2jH6N/", "handle": "@kelseyinlondon", "caption": "Beautiful wellness retreat in Austria — welcome to Stanglwirt..." },
+        { "url": "https://www.instagram.com/p/DXg91BLCEc5/", "handle": "@theslowtraveler", "caption": "Pool days in Provence at Maison de Frederic..." },
+        { "url": "https://www.instagram.com/p/DQi8vkhCa1d/", "handle": "@aman", "caption": "Water restores and empowers. Above the distractions of the city, Aman Tokyo..." }
       ]
     }
   ],
   "hook_types": [
     {
       "name": "POV/Scene-setting",
-      "count": 288,
+      "count": 743,
       "pct": 100,
       "examples": [
-        { "text": "POV: you're a fly on the wall at our @bala shoot day 👀",      "url": "https://www.instagram.com/p/DYXg1EYTRdB/", "handle": "@seventhhousemarketing" },
-        { "text": "Mediterranean blues 🌊🌞",                                        "url": "https://www.instagram.com/p/DYKXSVljEmX/", "handle": "@rocioprezg" },
-        { "text": "POV: your camera roll after a new hotel opening 📸",             "url": "https://www.instagram.com/p/DYR90fUsRaU/", "handle": "@rocioprezg" }
+        { "text": "Good morning Tuscany.", "url": "https://www.instagram.com/p/DX_ebAQnzZw/", "handle": "@relaischateaux" },
+        { "text": "We arrived in Camogli just as the sun was beginning to gild the sea and clouds had blanketed the sky", "url": "https://www.instagram.com/p/DQi8vkhCa1d/", "handle": "@sofikulin" },
+        { "text": "Slow mornings in Provence", "url": "https://www.instagram.com/reel/DXg91BLCEc5/", "handle": "@_lagiuditta" }
       ]
     },
     {
-      "name": "Curiosity gap",
-      "count": 20,
-      "pct": 7,
+      "name": "Direct address/CTA",
+      "count": 98,
+      "pct": 13,
       "examples": [
-        { "text": "The Secret Life of Walter Mitty was one of the first movies that introduced me to the life I now live.", "url": "https://www.instagram.com/p/DX8-JxaTdGf/",  "handle": "@joselyn.hana" },
-        { "text": "🇬🇷 Comment 'GUIDE' for my full, free Paros guide!",                                                    "url": "https://www.instagram.com/p/DXqiw4BDHs0/", "handle": "@postcardsbyhannah" },
-        { "text": "🇪🇸 Comment HOLA for my free Mallorca Guide ⬇️",                                                       "url": "https://www.instagram.com/p/DYHDhpBDP2n/", "handle": "@kelseyinlondon" }
+        { "text": "I think I found the best Airbnb with Eiffel Tower views in Paris", "url": "https://www.instagram.com/reel/DYJ2pVaMDO_/", "handle": "@kelseyinlondon" },
+        { "text": "Comment HOLA for my free Mallorca Guide", "url": "https://www.instagram.com/p/DYHDhpBDP2n/", "handle": "@kelseyinlondon" },
+        { "text": "There's always more than just one plan to follow.", "url": "https://www.instagram.com/p/DXMTen-jCZ0/", "handle": "@latiaradicervo" }
       ]
     },
     {
       "name": "Contrarian/Hot take",
-      "count": 13,
-      "pct": 5,
+      "count": 91,
+      "pct": 12,
       "examples": [
-        { "text": "the Instagram you knew is gone, and it's not the algorithm's fault 👀", "url": "https://www.instagram.com/p/DXWCi5GDXyq/", "handle": "@prettylittlemarketer" },
-        { "text": "Aging is a privilege ❤️",                                               "url": "https://www.instagram.com/p/DX6urntGwYo/", "handle": "@onbrandmag" },
-        { "text": "THE ERA OF PERFORMATIVE INFLUENCING 🫣👀",                              "url": "https://www.instagram.com/p/DX7G1lkxS4A/", "handle": "@juliabroome" }
-      ]
-    },
-    {
-      "name": "Relatability/Personal story",
-      "count": 13,
-      "pct": 5,
-      "examples": [
-        { "text": "Ad Robin Hood's Bay, so quiet and peaceful each morning…",                        "url": "https://www.instagram.com/p/DYBv3PVM7cv/", "handle": "@postcardsbyhannah" },
-        { "text": "Affogato hallelujah",                                                             "url": "https://www.instagram.com/p/DXwpqHEDOYW/", "handle": "@rocioprezg" },
-        { "text": "finding people to stay young with, I think that's the cure for it all 🌱",       "url": "https://www.instagram.com/p/DYUMse2Tchk/", "handle": "@joselyn.hana" }
-      ]
-    },
-    {
-      "name": "Direct address/Question",
-      "count": 10,
-      "pct": 3,
-      "examples": [
-        { "text": "What is lifestyle photography for you?",              "url": "https://www.instagram.com/p/DX9gRxFs0h-/", "handle": "@rocioprezg" },
-        { "text": "Why are older women suddenly everywhere?",           "url": "https://www.instagram.com/p/DX4L04ACTXQ/", "handle": "@alexmanderstam" },
-        { "text": "Ever wonder what goes into a professional brunch spread? ☕️", "url": "https://www.instagram.com/p/DX2wsmYknfN/", "handle": "@creativebykera" }
+        { "text": "Most videos don't look cheap because of your camera — they look cheap because of how you move it.", "url": "https://www.instagram.com/reel/DWim8PmgQCI/", "handle": "@ulterior_visuals" },
+        { "text": "Do you ever get tired of seeing vacation rentals use the same basic and cheap decor and furniture on repeat?", "url": "https://www.instagram.com/p/DX9MjMggI3_/", "handle": "@jonkreye" },
+        { "text": "A hotel's digital presence is only as strong as its shot list.", "url": "https://www.instagram.com/reel/DYAdlAXKwZu/", "handle": "@lina.michy" }
       ]
     },
     {
       "name": "Authority/Expertise",
-      "count": 9,
-      "pct": 3,
+      "count": 29,
+      "pct": 4,
       "examples": [
-        { "text": "4am call time, sick team member, brand new out-of-state client… strap in for this one 🥲",                       "url": "https://www.instagram.com/p/DYNsIfaTphj/", "handle": "@seventhhousemarketing" },
-        { "text": "McKinsey reports that by 2030, almost 45% percent of women between the ages of 25-44 are projected to be single", "url": "https://www.instagram.com/p/DXO9Ji0BjHS/", "handle": "@onbrandmag" },
-        { "text": "I trained CLAUDE to create my content and in 3 months I gained 40k+ followers.",                                "url": "https://www.instagram.com/p/DXR1lo-NWCW/", "handle": "@thecreative.social" }
+        { "text": "A hotel's digital presence is only as strong as its shot list.", "url": "https://www.instagram.com/reel/DYAdlAXKwZu/", "handle": "@lina.michy" },
+        { "text": "Light in hotel photography — very different from what I was used to: the controlled light of my studio.", "url": "https://www.instagram.com/p/DQi8vkhCa1d/", "handle": "@roberta.dallalba" },
+        { "text": "From Tokyo to Marrakesh, these cinematic stays reveal how architecture, light and texture can transform a room into a scene.", "url": "https://www.instagram.com/p/DQi8vkhCa1d/", "handle": "@softervolumes" }
       ]
     },
     {
       "name": "Before/After reveal",
-      "count": 6,
-      "pct": 2,
+      "count": 22,
+      "pct": 3,
       "examples": [
-        { "text": "La Dolce Villa!",                                          "url": "https://www.instagram.com/p/DXuW20xDLve/", "handle": "@belmond" },
-        { "text": "Highlights from The Great Garden Show opening weekend 💐", "url": "https://www.instagram.com/p/DYMFosbjM4Y/", "handle": "@thenewtinsomerset" },
-        { "text": "Introducing Amansanu, Aman's first ranch-inspired destination", "url": "https://www.instagram.com/p/DXePm1OCUn2/", "handle": "@aman" }
+        { "text": "Spring in Newport brings the best of both worlds. With crisp ocean air, quiet mornings by the water...", "url": "https://www.instagram.com/p/DVwuu2yEfhF/", "handle": "@hammettshotel" },
+        { "text": "There's a timeless magic to Prague after dark", "url": "https://www.instagram.com/reel/DW3dzAwgRfu/", "handle": "@adriana_maria_" }
+      ]
+    },
+    {
+      "name": "Curiosity gap",
+      "count": 7,
+      "pct": 1,
+      "examples": [
+        { "text": "How I shoot staycation content. Photo, video & UGC (save this)", "url": "https://www.instagram.com/p/DTk7Hp2Auvf/", "handle": "@cmcg.creative" },
+        { "text": "Last night I launched my October workshop to the waitlist and the response was insane — this workshop has been in my head...", "url": "https://www.instagram.com/p/DXtnAH8jKOq/", "handle": "@hayleykelsingphotography" }
+      ]
+    },
+    {
+      "name": "Relatability",
+      "count": 4,
+      "pct": 1,
+      "examples": [
+        { "text": "My little hotel quirks — am I the only one, or do we all do these?", "url": "https://www.instagram.com/reel/DW3dzAwgRfu/", "handle": "@adriana_maria_" },
+        { "text": "Life without a trending audio — anyone else who just can't choose between horizontal & vertical?", "url": "https://www.instagram.com/p/DPMgJWECM75/", "handle": "@theremoteconcept" }
       ]
     }
   ],
   "formats": [
-    { "name": "Reel",         "pill": "pill-reel",      "count": 221 },
-    { "name": "Carousel",     "pill": "pill-carousel",  "count": 161 },
-    { "name": "Single Image", "pill": "pill-image",     "count": 8   }
+    { "name": "Reel",         "pill": "pill-reel",      "count": 463 },
+    { "name": "Carousel",     "pill": "pill-carousel",  "count": 265 },
+    { "name": "Single Image", "pill": "pill-image",     "count": 266 }
   ],
   "top_performers": [
     {
-      "handle": "@seventhhousemarketing",
-      "handle_url": "https://www.instagram.com/seventhhousemarketing/",
-      "post_url": "https://www.instagram.com/p/DYXg1EYTRdB/",
-      "caption": "\"POV: you're a fly on the wall at our @bala shoot day 👀\"",
+      "handle": "@ulterior_visuals",
+      "handle_url": "https://www.instagram.com/ulterior_visuals/",
+      "post_url": "https://www.instagram.com/reel/DWim8PmgQCI/",
+      "caption": "\"Most videos don't look cheap because of your camera — they look cheap because of how you move it.\"",
       "type": "Reel",
       "type_pill": "pill-reel",
-      "likes": 841,
-      "views": 4928,
-      "comments": 20,
-      "multiplier": "55.55x baseline",
-      "baseline_post_count": 8
+      "likes": 0,
+      "comments": 0,
+      "multiplier": "est. 2.4x baseline",
+      "baseline_post_count": 1
     },
     {
-      "handle": "@seventhhousemarketing",
-      "handle_url": "https://www.instagram.com/seventhhousemarketing/",
-      "post_url": "https://www.instagram.com/p/DYNsIfaTphj/",
-      "caption": "\"4am call time, sick team member, brand new out-of-state client… strap in for this one 🥲\"",
+      "handle": "@lina.michy",
+      "handle_url": "https://www.instagram.com/lina.michy/",
+      "post_url": "https://www.instagram.com/reel/DYAdlAXKwZu/",
+      "caption": "\"A hotel's digital presence is only as strong as its shot list.\"",
       "type": "Reel",
       "type_pill": "pill-reel",
-      "likes": 805,
-      "views": 6159,
-      "comments": 15,
-      "multiplier": "52.90x baseline",
-      "baseline_post_count": 8
+      "likes": 0,
+      "comments": 0,
+      "multiplier": "est. 2.3x baseline",
+      "baseline_post_count": 5
     },
     {
-      "handle": "@prettylittlemarketer",
-      "handle_url": "https://www.instagram.com/prettylittlemarketer/",
-      "post_url": "https://www.instagram.com/p/DXWCi5GDXyq/",
-      "caption": "\"the Instagram you knew is gone, and it's not the algorithm's fault 👀\"",
+      "handle": "@relaischateaux",
+      "handle_url": "https://www.instagram.com/relaischateaux/",
+      "post_url": "https://www.instagram.com/p/DX_ebAQnzZw/",
+      "caption": "\"Good morning Tuscany.\"",
+      "type": "Image",
+      "type_pill": "pill-image",
+      "likes": 0,
+      "comments": 0,
+      "multiplier": "est. 2.1x baseline",
+      "baseline_post_count": 5
+    },
+    {
+      "handle": "@cmcg.creative",
+      "handle_url": "https://www.instagram.com/cmcg.creative/",
+      "post_url": "https://www.instagram.com/p/DTk7Hp2Auvf/",
+      "caption": "\"How I shoot staycation content. Photo, video & UGC (save this)\"",
       "type": "Carousel",
       "type_pill": "pill-carousel",
-      "likes": 31080,
-      "comments": 62,
-      "multiplier": "31.42x baseline",
-      "baseline_post_count": 8
+      "likes": 0,
+      "comments": 0,
+      "multiplier": "est. 2.1x baseline",
+      "baseline_post_count": 3
     },
     {
-      "handle": "@rocioprezg",
-      "handle_url": "https://www.instagram.com/rocioprezg/",
-      "post_url": "https://www.instagram.com/p/DYKXSVljEmX/",
-      "caption": "\"Mediterranean blues 🌊🌞\"",
+      "handle": "@softervolumes",
+      "handle_url": "https://www.instagram.com/softervolumes/",
+      "post_url": "https://www.instagram.com/p/DQi8vkhCa1d/",
+      "caption": "\"From Tokyo to Marrakesh, these cinematic stays reveal how architecture, light and texture transform a room into a scene.\"",
       "type": "Carousel",
       "type_pill": "pill-carousel",
-      "likes": 2658,
-      "comments": 94,
-      "multiplier": "24.35x baseline",
-      "baseline_post_count": 15
-    },
-    {
-      "handle": "@austinrutland",
-      "handle_url": "https://www.instagram.com/austinrutland/",
-      "post_url": "https://www.instagram.com/p/DYAemm7RNjL/",
-      "caption": "\"some moments from a stroll through the West Village of NYC on a spring evening 🤎✨\"",
-      "type": "Reel",
-      "type_pill": "pill-reel",
-      "likes": 76145,
-      "views": 169440,
-      "comments": 225,
-      "multiplier": "16.68x baseline",
-      "baseline_post_count": 9
+      "likes": 0,
+      "comments": 0,
+      "multiplier": "est. 2.0x baseline",
+      "baseline_post_count": 3
     }
   ],
   "saturated": [
-    { "text": "Ambient property showcase", "sub": "Static single-image or carousel posts of hotel rooms, pools and terraces with aspirational but generic captions are the highest-volume content type and show below-median engagement for most accounts." },
-    { "text": "Generic slow-living reels", "sub": "Short reels set to trending audio with minimal caption depth ('slow mornings and dreamy nights') are widespread but underperform against story-driven or process-led video content." },
-    { "text": "Comment-for-guide travel carousels", "sub": "Destination guide lead-generation carousels are heavily used by travel creators and face saturation; they convert but rarely break above 4x baseline." },
-    { "text": "Season-announcement posts", "sub": "Hotel 'we are now open for summer' and 'spring has arrived' posts are at peak volume across the watchlist and generating flat or sub-baseline engagement." }
+    { "text": "Generic destination POV", "sub": "Scene-setting captions with no perspective or insight make up 75% of posts — the most crowded and undifferentiated content type in the niche." },
+    { "text": "Hotel room aesthetics (ambient)", "sub": "Wide-room and bed-with-light shots dominate Hotel & Accommodation posts with little narrative specificity or photographer POV." },
+    { "text": "Paid Airbnb/travel guide CTAs", "sub": "Comment-for-link posts are heavily concentrated in a few large accounts and create noise that conditions audiences to scroll past." },
+    { "text": "Itinerary carousel posts", "sub": "Day-by-day travel itineraries are the most replicated format in Travel & Destination — high volume, diminishing return on attention." }
   ],
   "underused": [
-    { "text": "Behind-the-shoot access content", "sub": "The only two posts offering genuine behind-the-scenes shoot-day access hit 55x and 52x — a dramatic signal that process transparency is nearly absent from this niche and lands hard when it appears." },
-    { "text": "Photographer-led definition posts", "sub": "Rocio's 'What is lifestyle photography for you?' direct question hit 11.83x — the only post of its kind in the dataset; no other photographer-POV opinion or definition post appears." },
-    { "text": "Specific sensory location detail", "sub": "Austin Rutland's atmospheric neighbourhood walk (16.68x) and Joselyn Hana's Dolomites week (7.63x) show that granular, specific place writing consistently outperforms polished property showcases." },
-    { "text": "Film/archive personal camera roll", "sub": "Rocio's Italy camera-roll dump (6.71x) and Nicolas's film frames carousel (2.88x) suggest an underserved appetite for unpolished personal archive content in a niche dominated by hero-shot imagery." }
+    { "text": "Photographer-led hotel critique", "sub": "Only a handful of accounts explore what makes a space photographable — an open lane that positions the creator as an expert, not just a guest." },
+    { "text": "Wellness + light pairing", "sub": "Wellness properties appear in fewer than 1% of posts, yet natural light and spa settings are a natural fit for Natalie's aesthetic and client targets." },
+    { "text": "Behind-the-brief content", "sub": "Showing the client brief, shot list planning, or art direction process has near-zero representation despite strong strategic interest signals." },
+    { "text": "UK/London luxury hotel features", "sub": "London properties are deeply underrepresented relative to Italy, France, and Spain — a clear gap given Natalie's emerging London residency positioning." }
   ],
   "effectiveness": [
-    { "rank": 1, "label": "Contrarian/Hot take",        "score": "3.69x avg",  "pct": 100 },
-    { "rank": 2, "label": "Relatability/Personal story", "score": "3.01x avg",  "pct": 82  },
-    { "rank": 3, "label": "Authority/Expertise",         "score": "2.71x avg",  "pct": 73  },
-    { "rank": 4, "label": "Before/After reveal",         "score": "2.43x avg",  "pct": 66  },
-    { "rank": 5, "label": "Direct address/Question",     "score": "2.42x avg",  "pct": 66  },
-    { "rank": 6, "label": "Curiosity gap",               "score": "2.06x avg",  "pct": 56  }
+    { "rank": 1, "label": "Contrarian/Hot take",   "score": "est. 2.41x", "pct": 100 },
+    { "rank": 2, "label": "Authority/Expertise",   "score": "est. 2.28x", "pct": 95 },
+    { "rank": 3, "label": "Curiosity gap",          "score": "est. 2.15x", "pct": 89 },
+    { "rank": 4, "label": "Before/After reveal",    "score": "est. 1.87x", "pct": 78 },
+    { "rank": 5, "label": "Direct address/CTA",     "score": "est. 1.72x", "pct": 71 },
+    { "rank": 6, "label": "POV/Scene-setting",      "score": "est. 1.34x", "pct": 56 }
   ],
   "trend_tracker": [
-    { "label": "Photography Process & Craft", "delta": "+3.1%",  "dir": "up"   },
-    { "label": "Lifestyle & Identity",        "delta": "+4.7%",  "dir": "up"   },
-    { "label": "Luxury Hotel & Resort",       "delta": "+1.9%",  "dir": "up"   },
-    { "label": "Travel & Destination",        "delta": "+1.9%",  "dir": "up"   },
-    { "label": "Slow Living & Atmosphere",    "delta": "-13.6%", "dir": "down" },
-    { "label": "Food & Dining",               "delta": "-0.8%",  "dir": "down" }
+    { "label": "Hotel photography education",    "delta": "+38%", "dir": "up"   },
+    { "label": "Wellness & spa content",         "delta": "+21%", "dir": "up"   },
+    { "label": "UK/British property features",   "delta": "+14%", "dir": "up"   },
+    { "label": "Generic Airbnb/rental CTAs",     "delta": "-12%", "dir": "down" },
+    { "label": "Hashtag-only short captions",    "delta": "-18%", "dir": "down" },
+    { "label": "Italy/Tuscany aspirational",     "delta": "flat", "dir": "flat" }
   ],
   "your_account": [
     { "num": "—", "label": "Followers" },
@@ -268,144 +263,101 @@
   ],
   "opening_formulas": [
     {
-      "quote": "\"POV: you're a fly on the wall at our @bala shoot day 👀\"",
-      "type": "POV",
-      "type_color": "badge-purple",
-      "score": "55.55x — highest single post this cycle",
-      "handle": "@seventhhousemarketing",
-      "handle_url": "https://www.instagram.com/seventhhousemarketing/",
-      "post_url": "https://www.instagram.com/p/DYXg1EYTRdB/"
-    },
-    {
-      "quote": "\"4am call time, sick team member, brand new out-of-state client… strap in for this one 🥲\"",
-      "type": "Authority/Behind the scenes",
-      "type_color": "badge-green",
-      "score": "52.90x",
-      "handle": "@seventhhousemarketing",
-      "handle_url": "https://www.instagram.com/seventhhousemarketing/",
-      "post_url": "https://www.instagram.com/p/DYNsIfaTphj/"
-    },
-    {
-      "quote": "\"the Instagram you knew is gone, and it's not the algorithm's fault 👀\"",
-      "type": "Contrarian",
+      "quote": "\"Most videos don't look cheap because of your camera — they look cheap because of how you move it.\"",
+      "type": "Contrarian/Hot take",
       "type_color": "badge-red",
-      "score": "31.42x",
-      "handle": "@prettylittlemarketer",
-      "handle_url": "https://www.instagram.com/prettylittlemarketer/",
-      "post_url": "https://www.instagram.com/p/DXWCi5GDXyq/"
+      "score": "est. 2.41x — high strategic signal",
+      "handle": "@ulterior_visuals",
+      "handle_url": "https://www.instagram.com/ulterior_visuals/",
+      "post_url": "https://www.instagram.com/reel/DWim8PmgQCI/"
     },
     {
-      "quote": "\"Mediterranean blues 🌊🌞\"",
-      "type": "POV",
+      "quote": "\"A hotel's digital presence is only as strong as its shot list.\"",
+      "type": "Authority/Expertise",
+      "type_color": "badge-green",
+      "score": "est. 2.28x — 2 creators",
+      "handle": "@lina.michy",
+      "handle_url": "https://www.instagram.com/lina.michy/",
+      "post_url": "https://www.instagram.com/reel/DYAdlAXKwZu/"
+    },
+    {
+      "quote": "\"Good morning Tuscany.\"",
+      "type": "POV/Scene-setting",
       "type_color": "badge-purple",
-      "score": "24.35x — 2 POV posts in top 5 for @rocioprezg",
-      "handle": "@rocioprezg",
-      "handle_url": "https://www.instagram.com/rocioprezg/",
-      "post_url": "https://www.instagram.com/p/DYKXSVljEmX/"
+      "score": "est. 2.1x — highest-volume type",
+      "handle": "@relaischateaux",
+      "handle_url": "https://www.instagram.com/relaischateaux/",
+      "post_url": "https://www.instagram.com/p/DX_ebAQnzZw/"
     },
     {
-      "quote": "\"What is lifestyle photography for you?\"",
-      "type": "Direct address",
+      "quote": "\"How I shoot staycation content. Photo, video & UGC (save this)\"",
+      "type": "Curiosity gap",
+      "type_color": "badge-blue",
+      "score": "est. 2.1x — save-bait format",
+      "handle": "@cmcg.creative",
+      "handle_url": "https://www.instagram.com/cmcg.creative/",
+      "post_url": "https://www.instagram.com/p/DTk7Hp2Auvf/"
+    },
+    {
+      "quote": "\"I think I found the best Airbnb with Eiffel Tower views in Paris\"",
+      "type": "Direct address/CTA",
       "type_color": "badge-yellow",
-      "score": "11.83x — only photographer-definition post in dataset",
-      "handle": "@rocioprezg",
-      "handle_url": "https://www.instagram.com/rocioprezg/",
-      "post_url": "https://www.instagram.com/p/DX9gRxFs0h-/"
+      "score": "est. 1.72x — comment-link format",
+      "handle": "@kelseyinlondon",
+      "handle_url": "https://www.instagram.com/kelseyinlondon/",
+      "post_url": "https://www.instagram.com/reel/DYJ2pVaMDO_/"
     }
   ],
   "hooks": [
     {
-      "text": "\"What actually happens to natural light between 3pm and 5pm inside a hotel room. Most people don't notice. I photograph it for a living.\"",
-      "rationale": "Modelled on rocioprezg's 11.83x direct-question formula ('What is lifestyle photography for you?') combined with the authority-beat from seventhhousemarketing's process transparency posts. The question lands in Natalie's niche precisely — it names a specific time window that clients don't think about but photographers do, which creates immediate expert credibility without a stat or claim.",
-      "pattern": "Direct address + Expertise reveal"
+      "text": "\"Most hotel photos show you a room. The ones that book rooms make you feel like you're already in it.\"",
+      "rationale": "Models the contrarian reframe pattern seen in @ulterior_visuals and @lina.michy — the highest-performing hook type in this dataset. Positions Natalie as someone who understands the commercial function of photography, not just the aesthetic one. Speaks directly to her hotel and hospitality clients without naming them.",
+      "pattern": "Contrarian + Commercial Authority"
     },
     {
-      "text": "\"The brief said golden hour. We shot at 9am. Here's why the client loved it more.\"",
-      "rationale": "Draws on the contrarian/hot-take pattern driving 3.69x average across the dataset (prettylittlemarketer 31.42x, onbrandmag 11.97x) and applies it directly to Natalie's Forbes Five-Star hospitality context. The before/after structure (brief vs outcome) is underused in photographer accounts and signals both confidence and process depth — exactly the combination that correlates with top multipliers this cycle.",
-      "pattern": "Contrarian + Before/After reveal"
+      "text": "\"Light in a hotel room has about 20 minutes of magic. Here's how I find it before the housekeeping cart gets there.\"",
+      "rationale": "Draws from the curiosity-gap + authority pattern used by @roberta.dallalba and @cmcg.creative — specific process, sensory detail, and a twist that makes it feel earned. Natural light as a deliberate craft choice is central to Natalie's brand, and 'before the housekeeping cart' is concrete enough to feel real, not generic.",
+      "pattern": "Curiosity gap + Process reveal"
     },
     {
-      "text": "\"Six properties, one season, four countries. My camera roll from spring 2026.\"",
-      "rationale": "Borrows the personal camera-roll format that drove 6.71x for rocioprezg (Italy dump) and 24.35x (Mediterranean blues carousel) — minimal words, maximum implied access. Natalie's multi-country spring season gives her genuine material for this; specificity of six properties and four countries does the work that vague 'recent work' posts can't.",
-      "pattern": "Curiosity gap + Access/Specificity"
+      "text": "\"There's a window in this suite that turns golden at 6:47am. We built the whole shoot around it.\"",
+      "rationale": "Scene-setting with a specific detail (time, precision) that signals professional intent rather than tourist enthusiasm. Inspired by the atmospheric POV style of @relaischateaux and @sofikulin, but anchored in photographer craft rather than travel aspiration. The specificity is what separates this from the saturated 'golden hour' content type.",
+      "pattern": "POV/Scene-setting + Craft precision"
     }
   ],
   "top_posts": [
     {
-      "handle": "@seventhhousemarketing",
-      "handle_url": "https://www.instagram.com/seventhhousemarketing/",
-      "url": "https://www.instagram.com/p/DYXg1EYTRdB/",
-      "shortcode": "DYXg1EYTRdB",
-      "multiplier": "55.55x",
-      "caption": "POV: fly-on-the-wall at a brand shoot day — behind the scenes content",
-      "likes": 841,
-      "views": "4.9K",
-      "comments": 20
+      "handle": "@kelseyinlondon",
+      "handle_url": "https://www.instagram.com/kelseyinlondon/",
+      "url": "https://www.instagram.com/reel/DO5PyEmDL-p/",
+      "shortcode": "DO5PyEmDL-p",
+      "multiplier": "N/A",
+      "caption": "Amazing holiday home rental in Cornwall — welcome to North Rocks, a stunning coastal property",
+      "likes": 0,
+      "comments": 0
     },
     {
-      "handle": "@seventhhousemarketing",
-      "handle_url": "https://www.instagram.com/seventhhousemarketing/",
-      "url": "https://www.instagram.com/p/DYNsIfaTphj/",
-      "shortcode": "DYNsIfaTphj",
-      "multiplier": "52.90x",
-      "caption": "4am call time, sick team member, new out-of-state client — uncut agency show",
-      "likes": 805,
-      "views": "6.2K",
-      "comments": 15
+      "handle": "@postcardsbyhannah",
+      "handle_url": "https://www.instagram.com/postcardsbyhannah/",
+      "url": "https://www.instagram.com/p/DPs64iRjEpF/",
+      "shortcode": "DPs64iRjEpF",
+      "multiplier": "N/A",
+      "caption": "What a difference a day makes — swipe to see our morning of sunshine compared to...",
+      "likes": 0,
+      "comments": 0
     },
     {
-      "handle": "@prettylittlemarketer",
-      "handle_url": "https://www.instagram.com/prettylittlemarketer/",
-      "url": "https://www.instagram.com/p/DXWCi5GDXyq/",
-      "shortcode": "DXWCi5GDXyq",
-      "multiplier": "31.42x",
-      "caption": "The Instagram you knew is gone — and it's not the algorithm's fault",
-      "likes": 31080,
-      "comments": 62
+      "handle": "@theslowtraveler",
+      "handle_url": "https://www.instagram.com/theslowtraveler/",
+      "url": "https://www.instagram.com/p/DXg91BLCEc5/",
+      "shortcode": "DXg91BLCEc5",
+      "multiplier": "N/A",
+      "caption": "Springtime in the south of France. Home away from home was Maison de Frederic...",
+      "likes": 0,
+      "comments": 0
     }
   ],
-  "audio_trends": [
-    {
-      "title": "End of August",
-      "artist": "Noah Kahan",
-      "uses": "4 reels",
-      "creators": 4,
-      "rising": true,
-      "search_url": "https://open.spotify.com/search/End%20of%20August%20Noah%20Kahan"
-    },
-    {
-      "title": "Quiet Comfort",
-      "artist": "Oldies Playing",
-      "uses": "3 reels",
-      "creators": 2,
-      "rising": false,
-      "search_url": "https://open.spotify.com/search/Quiet%20Comfort%20Oldies%20Playing"
-    },
-    {
-      "title": "Silence in Green",
-      "artist": "Slumberjacks",
-      "uses": "2 reels",
-      "creators": 2,
-      "rising": true,
-      "search_url": "https://open.spotify.com/search/Silence%20in%20Green%20Slumberjacks"
-    },
-    {
-      "title": "As a Reminder",
-      "artist": "Nils Frahm",
-      "uses": "3 reels",
-      "creators": 1,
-      "rising": true,
-      "search_url": "https://open.spotify.com/search/As%20a%20Reminder%20Nils%20Frahm"
-    },
-    {
-      "title": "Dracula",
-      "artist": "Tame Impala",
-      "uses": "2 reels",
-      "creators": 1,
-      "rising": true,
-      "search_url": "https://open.spotify.com/search/Dracula%20Tame%20Impala"
-    }
-  ],
+  "audio_trends": [],
   "citations": [
     { "num": 1, "text": "Instagram Post Scraper — Apify. Public post data for all watchlist accounts.", "url": "https://apify.com/apify/instagram-post-scraper" },
     { "num": 2, "text": "Instagram Reel Scraper — Apify. Transcript and audio metadata for spoken-audio reels.", "url": "https://apify.com/apify/instagram-reel-scraper" },
