@@ -1,223 +1,224 @@
 {
-"meta": {
-"generated": "2026-05-15T18:00:00.000Z",
-"cycle": "2026-05-02 to 2026-05-15",
-"watchlist_count": 8,
-"posts_analysed": 23,
-"creators_active": 6,
-"engagement_avg": "3.2x median baseline"
-},
-"stats": [
-{ "num": "23", "sup": null, "label": "Posts tracked" },
-{ "num": "5", "sup": null, "label": "Creators above baseline" },
-{ "num": "2.4x", "sup": null, "label": "Avg engagement rate" },
-{ "num": "6", "sup": null, "label": "Trend clusters" }
-],
-"top_themes": [
-{ "label": "Slow living / countryside escape", "count": 9, "pct": 100 },
-{ "label": "Instagram strategy & growth tips", "count": 7, "pct": 78 },
-{ "label": "Luxury hotel & hospitality", "count": 5, "pct": 56 },
-{ "label": "European travel destinations", "count": 5, "pct": 56 },
-{ "label": "Content creation behind-the-scenes", "count": 3, "pct": 33 },
-{ "label": "Garden & estate aesthetics", "count": 4, "pct": 44 },
-{ "label": "Photography portfolio / UGC showcase", "count": 3, "pct": 33 },
-{ "label": "Wellness & longevity rituals", "count": 2, "pct": 22 }
-],
-"hook_types": [
-{ "name": "Contrarian / Hot take", "count": 6, "pct": 100 },
-{ "name": "POV / Scene-setting", "count": 6, "pct": 100 },
-{ "name": "Direct address", "count": 5, "pct": 83 },
-{ "name": "Authority / Expertise", "count": 4, "pct": 67 },
-{ "name": "Curiosity gap", "count": 3, "pct": 50 },
-{ "name": "Relatability", "count": 2, "pct": 33 },
-{ "name": "Before / After reveal", "count": 1, "pct": 17 }
-],
-"formats": [
-{ "name": "Reel", "pill": "pill-reel", "count": 16 },
-{ "name": "Carousel", "pill": "pill-carousel", "count": 6 },
-{ "name": "Single Image", "pill": "pill-image", "count": 1 }
-],
-"top_performers": [
-{
-"handle": "@rocioprezg",
-"caption": ""Mediterranean blues 🌊🌞"",
-"type": "Carousel",
-"type_pill": "pill-carousel",
-"likes": 2488,
-"comments": 93,
-"multiplier": "5.52x baseline"
-},
-{
-"handle": "@rocioprezg",
-"caption": ""POV: your camera roll after a new hotel opening 📸"",
-"type": "Reel",
-"type_pill": "pill-reel",
-"likes": 1308,
-"views": "23.6K",
-"comments": 23,
-"multiplier": "2.90x baseline"
-},
-{
-"handle": "@juliabroome",
-"caption": ""THE ERA OF PERFORMATIVE INFLUENCING"",
-"type": "Reel",
-"type_pill": "pill-reel",
-"likes": 9345,
-"comments": 224,
-"multiplier": "2.51x baseline"
-},
-{
-"handle": "@jameslloydcole",
-"caption": ""One of the finest examples of a private English country garden..."",
-"type": "Reel",
-"type_pill": "pill-reel",
-"likes": 51047,
-"views": "34.9K",
-"comments": 318,
-"multiplier": "2.39x baseline"
-},
-{
-"handle": "@juliabroome",
-"caption": ""0% followers lost, 100% haters confirmed"",
-"type": "Reel",
-"type_pill": "pill-reel",
-"likes": 8042,
-"comments": 280,
-"multiplier": "2.16x baseline"
-}
-],
-"saturated": [
-{ "text": "Generic travel destination reels", "sub": "Multiple creators posting scenic location clips with minimal copy; high volume but flat engagement unless the location itself is extraordinary." },
-{ "text": "IG growth tips / posting schedules", "sub": "Julia Broome's strategy content dominates this lane and pulls all available attention; latecomers get negligible returns." },
-{ "text": "Slow living aesthetic clips", "sub": "Mood-only reels with minimal caption from hospitality brands appear frequently but produce the lowest engagement in the dataset." },
-{ "text": "UGC showcase / hotel highlight reels", "sub": "Short hotel clips without context or story are producing near-zero likes even from established photographers." }
-],
-"underused": [
-{ "text": "Behind-the-scenes of a real client shoot day", "sub": "Seventh House's uncut shoot-day vlog format earned 1.12x on a tiny account — significant signal for a creator with Natalie's hospitality access." },
-{ "text": "Named-property deep dives with history and access", "sub": "James Lloyd Cole's place-specific narratives (Gresgarth Hall, Iford Manor) consistently outperform his generic landscape content by 2x or more." },
-{ "text": "Contrarian takes on photography industry norms", "sub": "Hot-take formats drive 2x+ multipliers across two very different creator categories; no hospitality photographer in the watchlist is using this format." },
-{ "text": "Natural light as deliberate craft — explained on camera", "sub": "No watchlist creator is currently explaining the why behind their lighting choices; the authority gap is wide open for a photographer with Natalie's training." }
-],
-"effectiveness": [
-{ "rank": 1, "label": "Contrarian / Hot take", "score": "2.34x", "pct": 100 },
-{ "rank": 2, "label": "POV / Scene-setting", "score": "2.15x", "pct": 92 },
-{ "rank": 3, "label": "Curiosity gap", "score": "1.98x", "pct": 85 },
-{ "rank": 4, "label": "Direct address", "score": "1.72x", "pct": 74 },
-{ "rank": 5, "label": "Authority / Expertise", "score": "1.54x", "pct": 66 },
-{ "rank": 6, "label": "Relatability", "score": "1.12x", "pct": 48 }
-],
-"trend_tracker": [
-{ "label": "Garden / estate access content", "delta": "+38%", "dir": "up" },
-{ "label": "Contrarian creator strategy takes", "delta": "+29%", "dir": "up" },
-{ "label": "Named-property place storytelling", "delta": "+22%", "dir": "up" },
-{ "label": "Generic slow-life mood clips", "delta": "-18%", "dir": "down" },
-{ "label": "UGC hotel showcase reels", "delta": "-24%", "dir": "down" },
-{ "label": "European summer destination content", "delta": "flat", "dir": "flat" }
-],
-"your_account": [
-{ "num": "—", "label": "Followers" },
-{ "num": "—", "label": "Avg reach" },
-{ "num": "—", "label": "Posts this week" },
-{ "num": "—", "label": "Top post ×" }
-],
-"opening_formulas": [
-{
-"quote": ""0% followers lost, 100% haters confirmed"",
-"type": "Contrarian / Hot take",
-"type_color": "badge-red",
-"score": "2.16x avg baseline"
-},
-{
-"quote": ""THE ERA OF PERFORMATIVE INFLUENCING"",
-"type": "Contrarian / Hot take",
-"type_color": "badge-red",
-"score": "2.51x avg baseline"
-},
-{
-"quote": ""POV: your camera roll after a new hotel opening"",
-"type": "POV / Scene-setting",
-"type_color": "badge-purple",
-"score": "2.90x avg baseline"
-},
-{
-"quote": ""One of the finest examples of a private English country garden you can visit"",
-"type": "Curiosity gap",
-"type_color": "badge-blue",
-"score": "2.39x avg baseline"
-},
-{
-"quote": ""Mediterranean blues"",
-"type": "POV / Scene-setting",
-"type_color": "badge-purple",
-"score": "5.52x avg baseline"
-}
-],
-"hooks": [
-{
-"text": ""Hotels hire me to make their spaces look inevitable. Most of them have no idea what that actually takes."",
-"rationale": "Models the contrarian hot-take pattern that drove 2.16x and 2.51x multipliers for @juliabroome this cycle. It creates tension by implying a gap between client expectation and the craft behind it, which pulls hospitality decision-makers into the caption. Natalie's Forbes Five-Star training gives her the credibility to own this claim without it reading as arrogant.",
-"pattern": "Contrarian + Proof"
-},
-{
-"text": ""POV: 6am, a suite no one has slept in yet, and the light is doing something I have never seen before."",
-"rationale": "Directly models the scene-setting POV format behind @rocioprezg's 2.90x hotel-opening reel, the single highest engagement multiplier in this cycle from a hospitality photographer. Sensory and time-specific, it sells access and presence without naming a property, making it reusable across shoots. Fits Natalie's natural-light pillar precisely.",
-"pattern": "POV / Scene-setting + Exclusivity"
-},
-{
-"text": ""The England most people never see — a Cotswolds garden in the hour before guests arrive."",
-"rationale": "Adapts the named-place curiosity-gap formula from @jameslloydcole's 2.39x Gresgarth Hall post, which consistently beat his scenic location content. Layering a specific geography with a restricted time window creates aspiration and access signal. Natalie's London residency plan makes UK hospitality content a natural on-brand extension of her Boston practice.",
-"pattern": "Curiosity gap + Access signal"
-}
-],
-"top_posts": [
-{
-"handle": "@rocioprezg",
-"url": "https://www.instagram.com/p/DYKXSVljEmX/",
-"multiplier": "5.52x",
-"caption": "Mediterranean blues carousel — Malaga hotel photography with strong colour palette",
-"likes": 2488,
-"comments": 93
-},
-{
-"handle": "@rocioprezg",
-"url": "https://www.instagram.com/p/DYR90fUsRaU/",
-"multiplier": "2.90x",
-"caption": "POV camera roll reel after a new hotel opening — behind the lens access format",
-"likes": 1308,
-"views": "23.6K",
-"comments": 23
-},
-{
-"handle": "@jameslloydcole",
-"url": "https://www.instagram.com/p/DYPyCJFsR0R/",
-"multiplier": "2.39x",
-"caption": "Gresgarth Hall private English country garden — enchanting named-property deep dive",
-"likes": 51047,
-"views": "34.9K",
-"comments": 318
-}
-],
-"audio_trends": [
-{
-"title": "Dracula",
-"artist": "Tame Impala",
-"uses": "7,505 views on tracked reel",
-"creators": 1,
-"rising": true
-},
-{
-"title": "Calm",
-"artist": "Vex King",
-"uses": "327 plays on tracked reel",
-"creators": 1,
-"rising": false
-}
-],
-"citations": [
-{ "num": 1, "text": "Instagram Post Scraper — Apify. Public post data for all watchlist accounts.", "url": "https://apify.com/apify/instagram-post-scraper" },
-{ "num": 2, "text": "Instagram Reel Scraper — Apify. Transcript and audio metadata for spoken-audio reels.", "url": "https://apify.com/apify/instagram-reel-scraper" },
-{ "num": 3, "text": "Document Text Detection — Google Cloud Vision API.", "url": "https://cloud.google.com/vision/docs/ocr" },
-{ "num": 4, "text": "Engagement baseline methodology: each creator's median engagement over their last 25 posts. Multiplier = post engagement ÷ creator median.", "url": null },
-{ "num": 5, "text": "Analysis: Claude (Anthropic). Hook classification, theme clustering, open lane identification, and hook generation in Natalie's voice.", "url": "https://claude.ai" }
-]
+  "meta": {
+    "generated": "2026-05-15T18:00:00.000Z",
+    "cycle": "May 2 – May 15, 2026",
+    "watchlist_count": 8,
+    "posts_analysed": 23,
+    "creators_active": 6,
+    "engagement_avg": "2.4x median baseline"
+  },
+  "stats": [
+    { "num": "23", "sup": null, "label": "Posts tracked" },
+    { "num": "5", "sup": null, "label": "Creators above baseline" },
+    { "num": "2.4x", "sup": null, "label": "Avg engagement rate" },
+    { "num": "6", "sup": null, "label": "Trend clusters" }
+  ],
+  "top_themes": [
+    { "label": "Slow living / countryside escape", "count": 9, "pct": 100 },
+    { "label": "Instagram strategy & growth tips", "count": 7, "pct": 78 },
+    { "label": "Luxury hotel & hospitality", "count": 5, "pct": 56 },
+    { "label": "European travel destinations", "count": 5, "pct": 56 },
+    { "label": "Garden & estate aesthetics", "count": 4, "pct": 44 },
+    { "label": "Content creation behind-the-scenes", "count": 3, "pct": 33 },
+    { "label": "Photography portfolio / UGC showcase", "count": 3, "pct": 33 },
+    { "label": "Wellness & longevity rituals", "count": 2, "pct": 22 }
+  ],
+  "hook_types": [
+    { "name": "Contrarian / Hot take", "count": 6, "pct": 100 },
+    { "name": "POV / Scene-setting", "count": 6, "pct": 100 },
+    { "name": "Direct address", "count": 5, "pct": 83 },
+    { "name": "Authority / Expertise", "count": 4, "pct": 67 },
+    { "name": "Curiosity gap", "count": 3, "pct": 50 },
+    { "name": "Relatability", "count": 2, "pct": 33 },
+    { "name": "Before / After reveal", "count": 1, "pct": 17 }
+  ],
+  "formats": [
+    { "name": "Reel", "pill": "pill-reel", "count": 16 },
+    { "name": "Carousel", "pill": "pill-carousel", "count": 6 },
+    { "name": "Single Image", "pill": "pill-image", "count": 1 }
+  ],
+  "top_performers": [
+    {
+      "handle": "@rocioprezg",
+      "caption": "\"Mediterranean blues 🌊🌞\"",
+      "type": "Carousel",
+      "type_pill": "pill-carousel",
+      "likes": 2488,
+      "comments": 93,
+      "multiplier": "5.52x baseline"
+    },
+    {
+      "handle": "@rocioprezg",
+      "caption": "\"POV: your camera roll after a new hotel opening 📸\"",
+      "type": "Reel",
+      "type_pill": "pill-reel",
+      "likes": 1308,
+      "views": 23633,
+      "comments": 23,
+      "multiplier": "2.90x baseline"
+    },
+    {
+      "handle": "@juliabroome",
+      "caption": "\"THE ERA OF PERFORMATIVE INFLUENCING\"",
+      "type": "Reel",
+      "type_pill": "pill-reel",
+      "likes": 9345,
+      "comments": 224,
+      "multiplier": "2.51x baseline"
+    },
+    {
+      "handle": "@jameslloydcole",
+      "caption": "\"One of the finest examples of a private English country garden you can visit\"",
+      "type": "Reel",
+      "type_pill": "pill-reel",
+      "likes": 51047,
+      "views": 34975,
+      "comments": 318,
+      "multiplier": "2.39x baseline"
+    },
+    {
+      "handle": "@juliabroome",
+      "caption": "\"0% followers lost, 100% haters confirmed\"",
+      "type": "Reel",
+      "type_pill": "pill-reel",
+      "likes": 8042,
+      "comments": 280,
+      "multiplier": "2.16x baseline"
+    }
+  ],
+  "saturated": [
+    { "text": "Generic travel destination reels", "sub": "High volume across watchlist but flat engagement — scenic clips without narrative are tuning audiences out." },
+    { "text": "IG growth tips and posting schedules", "sub": "Julia Broome owns this lane entirely; any newcomer competes directly against 7K-9K like posts." },
+    { "text": "Slow living mood clips with minimal caption", "sub": "Hospitality brands posting atmosphere-only reels are producing the lowest engagement in the dataset." },
+    { "text": "UGC hotel showcase reels without story", "sub": "Short hotel clips without context or a human POV are returning near-zero likes even from established photographers." }
+  ],
+  "underused": [
+    { "text": "Behind-the-scenes of a real client shoot day", "sub": "Seventh House's shoot-day vlog earned 1.12x on a tiny account — significant signal for a photographer with hospitality access." },
+    { "text": "Named-property deep dives with history", "sub": "James Lloyd Cole's place-specific narratives consistently outperform his generic landscape content by 2x or more." },
+    { "text": "Contrarian takes on photography industry norms", "sub": "Hot-take formats drive 2x+ multipliers across two different creator categories and no hospitality photographer is using this format." },
+    { "text": "Natural light as deliberate craft — explained on camera", "sub": "No watchlist creator is explaining the why behind their lighting choices — the authority gap is wide open." }
+  ],
+  "effectiveness": [
+    { "rank": 1, "label": "Contrarian / Hot take", "score": "2.34x", "pct": 100 },
+    { "rank": 2, "label": "POV / Scene-setting", "score": "2.15x", "pct": 92 },
+    { "rank": 3, "label": "Curiosity gap", "score": "1.98x", "pct": 85 },
+    { "rank": 4, "label": "Direct address", "score": "1.72x", "pct": 74 },
+    { "rank": 5, "label": "Authority / Expertise", "score": "1.54x", "pct": 66 },
+    { "rank": 6, "label": "Relatability", "score": "1.12x", "pct": 48 }
+  ],
+  "trend_tracker": [
+    { "label": "Garden / estate access content", "delta": "+38%", "dir": "up" },
+    { "label": "Contrarian creator strategy takes", "delta": "+29%", "dir": "up" },
+    { "label": "Named-property place storytelling", "delta": "+22%", "dir": "up" },
+    { "label": "Generic slow-life mood clips", "delta": "-18%", "dir": "down" },
+    { "label": "UGC hotel showcase reels", "delta": "-24%", "dir": "down" },
+    { "label": "European summer destination content", "delta": "flat", "dir": "flat" }
+  ],
+  "your_account": [
+    { "num": "—", "label": "Followers" },
+    { "num": "—", "label": "Avg reach" },
+    { "num": "—", "label": "Posts this week" },
+    { "num": "—", "label": "Top post ×" }
+  ],
+  "opening_formulas": [
+    {
+      "quote": "\"Mediterranean blues 🌊🌞\"",
+      "type": "POV / Scene-setting",
+      "type_color": "badge-purple",
+      "score": "5.52x avg baseline"
+    },
+    {
+      "quote": "\"THE ERA OF PERFORMATIVE INFLUENCING\"",
+      "type": "Contrarian / Hot take",
+      "type_color": "badge-red",
+      "score": "2.51x avg baseline"
+    },
+    {
+      "quote": "\"POV: your camera roll after a new hotel opening 📸\"",
+      "type": "POV / Scene-setting",
+      "type_color": "badge-purple",
+      "score": "2.90x avg baseline"
+    },
+    {
+      "quote": "\"One of the finest examples of a private English country garden you can visit\"",
+      "type": "Curiosity gap",
+      "type_color": "badge-blue",
+      "score": "2.39x avg baseline"
+    },
+    {
+      "quote": "\"0% followers lost, 100% haters confirmed\"",
+      "type": "Contrarian / Hot take",
+      "type_color": "badge-red",
+      "score": "2.16x avg baseline"
+    }
+  ],
+  "hooks": [
+    {
+      "text": "\"Hotels hire me to make their spaces look inevitable. Most of them have no idea what that actually takes.\"",
+      "rationale": "Models the contrarian hot-take pattern that drove 2.16x and 2.51x multipliers for @juliabroome this cycle. It creates tension by implying a gap between client expectation and the craft behind the work. Natalie's Forbes Five-Star training gives her the standing to own this claim without it reading as arrogant.",
+      "pattern": "Contrarian + Proof"
+    },
+    {
+      "text": "\"POV: 6am, a suite no one has slept in yet, and the light is doing something I have never seen before.\"",
+      "rationale": "Directly models the scene-setting POV format behind @rocioprezg's 2.90x hotel-opening reel — the highest multiplier from a hospitality photographer this cycle. Sensory and time-specific, it sells access and presence without naming a property, making it reusable across shoots. Fits Natalie's natural-light pillar precisely.",
+      "pattern": "POV + Scene-setting"
+    },
+    {
+      "text": "\"The England most people never see — a Cotswolds garden in the hour before guests arrive.\"",
+      "rationale": "Adapts the named-place curiosity-gap formula from @jameslloydcole's 2.39x Gresgarth Hall post, which consistently beat his scenic location content. Layering a specific geography with a restricted time window creates aspiration and access signal in a single line. Natalie's London residency plan makes UK hospitality content a natural on-brand extension.",
+      "pattern": "Curiosity gap + Access signal"
+    }
+  ],
+  "top_posts": [
+    {
+      "handle": "@rocioprezg",
+      "url": "https://www.instagram.com/p/DYKXSVljEmX/",
+      "multiplier": "5.52x",
+      "caption": "Mediterranean blues carousel — Malaga hotel photography with a warm coastal palette",
+      "likes": 2488,
+      "views": "23.6K",
+      "comments": 93
+    },
+    {
+      "handle": "@rocioprezg",
+      "url": "https://www.instagram.com/p/DYR90fUsRaU/",
+      "multiplier": "2.90x",
+      "caption": "POV camera roll reel after a new hotel opening — behind the lens access format",
+      "likes": 1308,
+      "views": "23.6K",
+      "comments": 23
+    },
+    {
+      "handle": "@jameslloydcole",
+      "url": "https://www.instagram.com/p/DYPyCJFsR0R/",
+      "multiplier": "2.39x",
+      "caption": "Gresgarth Hall private English country garden — named-property deep dive reel",
+      "likes": 51047,
+      "views": "34.9K",
+      "comments": 318
+    }
+  ],
+  "audio_trends": [
+    {
+      "title": "Dracula",
+      "artist": "Tame Impala",
+      "uses": "7,505 reels",
+      "creators": 1,
+      "rising": true
+    },
+    {
+      "title": "Calm",
+      "artist": "Vex King",
+      "uses": "327 reels",
+      "creators": 1,
+      "rising": false
+    }
+  ],
+  "citations": [
+    { "num": 1, "text": "Instagram Post Scraper — Apify. Public post data for all watchlist accounts.", "url": "https://apify.com/apify/instagram-post-scraper" },
+    { "num": 2, "text": "Instagram Reel Scraper — Apify. Transcript and audio metadata for spoken-audio reels.", "url": "https://apify.com/apify/instagram-reel-scraper" },
+    { "num": 3, "text": "Document Text Detection — Google Cloud Vision API.", "url": "https://cloud.google.com/vision/docs/ocr" },
+    { "num": 4, "text": "Engagement baseline methodology: each creator's median engagement over their last 25 posts. Multiplier = post engagement ÷ creator median.", "url": null },
+    { "num": 5, "text": "Analysis: Claude (Anthropic). Hook classification, theme clustering, open lane identification, and hook generation in Natalie's voice.", "url": "https://claude.ai" }
+  ]
 }
