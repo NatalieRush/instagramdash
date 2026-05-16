@@ -1,14 +1,21 @@
 /**
- * CreatorIntel — Weekly Scrape Pipeline
+ * CreatorIntel — Bi-Weekly Scrape Pipeline
  * pipeline/scrape.js
  *
  * What this does:
- * 1. Runs Apify Instagram Post Scraper on all watchlist accounts
+ * 1. Runs Apify Instagram Post Scraper on all watchlist accounts (25 posts each)
  * 2. Filters reels with spoken audio, runs Apify Reel Scraper for transcripts
  * 3. Runs Google Vision OCR on carousel cover slides + reel thumbnails
- * 4. Calculates per-creator engagement baselines
- * 5. Scores each post against baseline, flags top performers
- * 6. Writes enriched-data.json for the manual Claude analysis session
+ * 4. Calculates per-creator engagement baselines (median across ALL posts in dataset)
+ * 5. Scores each post against that creator's baseline, flags top performers (≥2.0x)
+ * 6. Writes enriched-data.json for the Claude analysis session
+ *
+ * Baseline methodology:
+ * - For each creator, collect all posts returned in this run (up to 25)
+ * - Median of their interactions (likes + comments), excluding posts where likesCount = -1
+ * - baselineMultiplier = post interactions ÷ creator median
+ * - A post is a top performer if baselineMultiplier ≥ 2.0
+ * - Single-post creators get multiplier = 1.0 and are NOT flagged as top performers
  */
 
 const fs = require('fs');
@@ -101,7 +108,7 @@ async function startApifyRun(actorId, input) {
 async function waitForRun(runId, maxWaitMs = 600000) {
   const start = Date.now();
   while (Date.now() - start < maxWaitMs) {
-    await sleep(10000); // poll every 10 seconds
+    await sleep(10000);
     const url = `https://api.apify.com/v2/actor-runs/${runId}?token=${APIFY_TOKEN}`;
     const result = await httpsGet(url);
     const status = result.data.status;
@@ -143,16 +150,16 @@ async function extractTextFromImage(imageUrl) {
 
 // ── CALCULATE ENGAGEMENT ──────────────────────────────────────────────
 function getEngagement(post) {
-  const likes = post.likesCount || post.likes_count || 0;
+  const likes    = post.likesCount    || post.likes_count    || 0;
   const comments = post.commentsCount || post.comments_count || 0;
-  const views = post.videoViewCount || post.video_view_count || 0;
-  const plays = post.videoPlayCount || post.video_play_count || 0;
-  const followers = post.ownerFollowersCount || 1000; // fallback
+  const views    = post.videoViewCount || post.video_view_count || post.videoPlayCount || post.video_play_count || 0;
+  const followers = post.ownerFollowersCount || 1000;
   const interactions = likes + comments;
   const engRate = followers > 0 ? (interactions / followers) * 100 : 0;
-  return { likes, comments, views: views || plays, engRate, interactions };
+  return { likes, comments, views, engRate, interactions };
 }
 
+// Median of an array of numbers
 function median(arr) {
   if (!arr.length) return 0;
   const sorted = [...arr].sort((a, b) => a - b);
@@ -168,29 +175,41 @@ function getPostType(post) {
   return 'image';
 }
 
+// ── EXTRACT SHORTCODE FROM URL ────────────────────────────────────────
+function extractShortcode(url) {
+  if (!url) return null;
+  const m = url.match(/\/p\/([A-Za-z0-9_-]+)/);
+  return m ? m[1] : null;
+}
+
 // ── MAIN PIPELINE ─────────────────────────────────────────────────────
 async function main() {
   console.log('═══════════════════════════════════════════');
-  console.log('CreatorIntel Weekly Pipeline — ' + new Date().toISOString());
-  console.log(`Scraping ${ALL_HANDLES.length} accounts`);
+  console.log('CreatorIntel Bi-Weekly Pipeline — ' + new Date().toISOString());
+  console.log(`Scraping ${ALL_HANDLES.length} accounts · 25 posts each`);
   console.log('═══════════════════════════════════════════');
 
   // ── STEP 1: POST SCRAPER ───────────────────────────────────────────
   console.log('\n[1/4] Running Instagram Post Scraper...');
   const postRunId = await startApifyRun('apify~instagram-post-scraper', {
     directUrls: ALL_HANDLES.map(h => `https://www.instagram.com/${h}/`),
-    resultsLimit: 20,
+    resultsLimit: 25,
     addParentData: false
   });
   const postDatasetId = await waitForRun(postRunId);
   const rawPosts = await fetchDataset(postDatasetId);
   console.log(`  Retrieved ${rawPosts.length} posts`);
 
+  // Track which handles returned no data (private / restricted)
+  const returnedHandles = new Set(rawPosts.map(p => p.ownerUsername || p.username).filter(Boolean));
+  const missingHandles  = ALL_HANDLES.filter(h => !returnedHandles.has(h));
+  if (missingHandles.length) {
+    console.log(`  ⚠️  No data for: ${missingHandles.join(', ')}`);
+  }
+
   // ── STEP 2: IDENTIFY REELS WITH AUDIO ─────────────────────────────
   const spokenReels = rawPosts.filter(p =>
-    getPostType(p) === 'reel' &&
-    p.hasAudio !== false &&
-    (p.url || p.shortCode)
+    getPostType(p) === 'reel' && p.hasAudio !== false && (p.url || p.shortCode)
   );
   console.log(`\n[2/4] Found ${spokenReels.length} spoken-audio reels — running Reel Scraper...`);
 
@@ -198,7 +217,7 @@ async function main() {
   if (spokenReels.length > 0) {
     const reelUrls = spokenReels
       .map(p => p.url || `https://www.instagram.com/p/${p.shortCode}/`)
-      .slice(0, 350); // capped at 350 for weekly $1.25 budget
+      .slice(0, 200);
 
     const reelRunId = await startApifyRun('apify~instagram-reel-scraper', {
       directUrls: reelUrls,
@@ -209,9 +228,7 @@ async function main() {
 
     reelData.forEach(r => {
       const key = r.shortCode || r.url;
-      if (key && r.transcript) {
-        reelTranscripts[key] = r.transcript;
-      }
+      if (key && r.transcript) reelTranscripts[key] = r.transcript;
     });
     console.log(`  Got transcripts for ${Object.keys(reelTranscripts).length} reels`);
   }
@@ -222,32 +239,43 @@ async function main() {
 
   const enrichedPosts = [];
   for (const post of rawPosts) {
-    const type = getPostType(post);
-    const eng = getEngagement(post);
-    const shortCode = post.shortCode || post.id;
+    const type       = getPostType(post);
+    const eng        = getEngagement(post);
+    const shortCode  = post.shortCode || extractShortcode(post.url) || post.id;
     const transcript = reelTranscripts[shortCode] || reelTranscripts[post.url] || null;
 
-    let ocrText = null;
+    // Skip posts with hidden likes
+    if ((post.likesCount || 0) === -1) {
+      enrichedPosts.push({
+        id: shortCode, url: post.url || `https://www.instagram.com/p/${shortCode}/`,
+        shortcode: shortCode,
+        handle: post.ownerUsername || post.username,
+        handle_url: `https://www.instagram.com/${post.ownerUsername || post.username}/`,
+        category: getCategoryForHandle(post.ownerUsername || post.username),
+        type, caption: post.caption || '', hookText: null, ocrText: null, transcript,
+        timestamp: post.timestamp || post.takenAtTimestamp,
+        likes: -1, comments: eng.comments, views: eng.views,
+        engRate: 0, interactions: 0, followers: post.ownerFollowersCount || null,
+        displayUrl: post.displayUrl || null, audio: null, hiddenLikes: true
+      });
+      continue;
+    }
 
-    // Only run Vision on carousel first slide or reel thumbnail
+    let ocrText = null;
     if (GOOGLE_VISION_KEY && visionCount < 950) {
       const imageUrl = type === 'carousel'
         ? (post.images?.[0]?.url || post.displayUrl || null)
         : type === 'reel'
           ? (post.displayUrl || post.thumbnailUrl || null)
           : null;
-
       if (imageUrl) {
         ocrText = await extractTextFromImage(imageUrl);
         visionCount++;
-        if (ocrText) {
-          // Small delay to respect Vision API rate limits
-          await sleep(100);
-        }
+        if (ocrText) await sleep(100);
       }
     }
 
-    // Determine hook text: OCR > transcript first line > caption first line
+    // Hook text priority: OCR → transcript first sentence → caption first line
     let hookText = null;
     if (ocrText && ocrText.length > 5) {
       hookText = ocrText.substring(0, 150);
@@ -257,35 +285,25 @@ async function main() {
       hookText = post.caption.split('\n')[0].substring(0, 150);
     }
 
-    // Audio metadata
-    const audioName = post.musicInfo?.musicName || post.audioTitle || null;
+    const audioName   = post.musicInfo?.musicName || post.audioTitle   || null;
     const audioArtist = post.musicInfo?.artistName || post.audioArtist || null;
-    const audioId = post.musicInfo?.musicId || post.audioId || null;
-    const audioUses = post.musicInfo?.usageCount || null;
-
-    // Owner info
-    const category = Object.entries(WATCHLIST).find(([, handles]) =>
-      handles.includes(post.ownerUsername || post.username)
-    )?.[0] || 'unknown';
+    const audioId     = post.musicInfo?.musicId    || post.audioId     || null;
+    const audioUses   = post.musicInfo?.usageCount || null;
 
     enrichedPosts.push({
       id: shortCode,
       url: post.url || `https://www.instagram.com/p/${shortCode}/`,
+      shortcode: shortCode,
       handle: post.ownerUsername || post.username,
-      category,
-      type,
-      caption: post.caption || '',
-      hookText,
-      ocrText,
-      transcript,
+      handle_url: `https://www.instagram.com/${post.ownerUsername || post.username}/`,
+      category: getCategoryForHandle(post.ownerUsername || post.username),
+      type, caption: post.caption || '', hookText, ocrText, transcript,
       timestamp: post.timestamp || post.takenAtTimestamp,
-      likes: eng.likes,
-      comments: eng.comments,
-      views: eng.views,
-      engRate: eng.engRate,
-      interactions: eng.interactions,
+      likes: eng.likes, comments: eng.comments, views: eng.views,
+      engRate: eng.engRate, interactions: eng.interactions,
       followers: post.ownerFollowersCount || null,
       displayUrl: post.displayUrl || null,
+      hiddenLikes: false,
       audio: audioName ? { name: audioName, artist: audioArtist, id: audioId, uses: audioUses } : null
     });
   }
@@ -295,36 +313,45 @@ async function main() {
   // ── STEP 4: CALCULATE BASELINES + SCORES ──────────────────────────
   console.log('\n[4/4] Calculating engagement baselines and scoring posts...');
 
-  // Group by creator
+  // Group by creator, exclude hidden-likes posts from baseline
   const byCreator = {};
   enrichedPosts.forEach(p => {
     if (!byCreator[p.handle]) byCreator[p.handle] = [];
     byCreator[p.handle].push(p);
   });
 
-  // Calculate median engagement per creator
-  const baselines = {};
+  // Baseline = median interactions of all valid posts for that creator
+  const baselines   = {};
+  const postCounts  = {};
   Object.entries(byCreator).forEach(([handle, posts]) => {
-    const interactions = posts.map(p => p.interactions).filter(v => v > 0);
-    baselines[handle] = median(interactions);
+    const valid = posts.filter(p => !p.hiddenLikes && p.interactions >= 0);
+    const interactions = valid.map(p => p.interactions);
+    baselines[handle]  = median(interactions);
+    postCounts[handle] = valid.length;
   });
 
   // Score each post
   enrichedPosts.forEach(p => {
+    if (p.hiddenLikes) { p.baselineMultiplier = null; p.isTopPerformer = false; return; }
     const baseline = baselines[p.handle] || 1;
-    p.baselineMultiplier = baseline > 0
+    const count    = postCounts[p.handle] || 1;
+    p.baselinePostCount   = count;
+    p.baselineMultiplier  = baseline > 0
       ? Math.round((p.interactions / baseline) * 10) / 10
       : null;
-    p.isTopPerformer = p.baselineMultiplier !== null && p.baselineMultiplier >= 2.0;
+    // Only flag as top performer if ≥2.0x AND creator has more than 1 post in dataset
+    p.isTopPerformer = p.baselineMultiplier !== null
+      && p.baselineMultiplier >= 2.0
+      && count > 1;
   });
 
-  // ── COMPILE SUMMARY STATS ──────────────────────────────────────────
+  // ── COMPILE OUTPUT ─────────────────────────────────────────────────
   const topPerformers = enrichedPosts
     .filter(p => p.isTopPerformer)
     .sort((a, b) => b.baselineMultiplier - a.baselineMultiplier)
     .slice(0, 15);
 
-  // Audio trend analysis
+  // Audio trend analysis — track across creators
   const audioMap = {};
   enrichedPosts.forEach(p => {
     if (p.audio?.id) {
@@ -340,11 +367,24 @@ async function main() {
     .slice(0, 8)
     .map(a => ({ ...a, creators: a.creators.size }));
 
-  // Format breakdown
+  // Format counts
   const formatCounts = { reel: 0, carousel: 0, image: 0 };
   enrichedPosts.forEach(p => { formatCounts[p.type] = (formatCounts[p.type] || 0) + 1; });
 
-  // ── WRITE OUTPUT ───────────────────────────────────────────────────
+  // Data quality notes for dashboard banner
+  const dataNotes = [];
+  if (missingHandles.length > 0) {
+    dataNotes.push(`${missingHandles.length} accounts returned no data (private or restricted): ${missingHandles.slice(0, 5).join(', ')}${missingHandles.length > 5 ? '…' : ''}`);
+  }
+  const hiddenLikesCount = enrichedPosts.filter(p => p.hiddenLikes).length;
+  if (hiddenLikesCount > 0) {
+    dataNotes.push(`${hiddenLikesCount} posts excluded from baseline calculations (hidden likes).`);
+  }
+  const thinBaselineCreators = Object.entries(postCounts).filter(([, c]) => c <= 2).map(([h]) => h);
+  if (thinBaselineCreators.length > 0) {
+    dataNotes.push(`${thinBaselineCreators.length} creators have ≤2 posts in dataset — multipliers for these are directional only.`);
+  }
+
   const output = {
     meta: {
       generated: new Date().toISOString(),
@@ -353,19 +393,22 @@ async function main() {
       posts_analysed: enrichedPosts.length,
       creators_active: Object.keys(byCreator).length,
       top_performers_found: topPerformers.length,
-      ocr_images_processed: visionCount
+      ocr_images_processed: visionCount,
+      missing_handles: missingHandles,
+      data_notes: dataNotes
     },
     baselines,
+    post_counts: postCounts,
     format_counts: formatCounts,
     trending_audio: trendingAudio,
     top_performers: topPerformers,
     all_posts: enrichedPosts,
     _next_step: [
-      "1. Download this enriched-data.json file from GitHub",
+      "1. Download enriched-data.json from GitHub (or copy its contents)",
       "2. Open Claude chat and paste the JSON",
-      "3. Run the weekly analysis prompt (saved in your Claude project)",
+      "3. Type: run weekly analysis",
       "4. Copy the structured JSON output Claude returns",
-      "5. Save it as analysis.json, commit, and push",
+      "5. Paste it into analysis.json in GitHub, commit",
       "6. Vercel redeploys automatically — dashboard is updated"
     ]
   };
@@ -373,22 +416,29 @@ async function main() {
   fs.writeFileSync('enriched-data.json', JSON.stringify(output, null, 2));
   console.log('\n═══════════════════════════════════════════');
   console.log(`Pipeline complete.`);
-  console.log(`Posts processed: ${enrichedPosts.length}`);
+  console.log(`Posts processed:      ${enrichedPosts.length}`);
   console.log(`Top performers found: ${topPerformers.length}`);
-  console.log(`Trending audio: ${trendingAudio.length}`);
+  console.log(`Trending audio:       ${trendingAudio.length}`);
   console.log(`OCR images processed: ${visionCount}`);
-  console.log('Output saved to enriched-data.json');
+  console.log(`Missing handles:      ${missingHandles.length}`);
+  console.log('Output: enriched-data.json');
   console.log('═══════════════════════════════════════════');
+}
+
+function getCategoryForHandle(handle) {
+  if (!handle) return 'unknown';
+  return Object.entries(WATCHLIST).find(([, handles]) => handles.includes(handle))?.[0] || 'unknown';
 }
 
 function getCycleDates() {
   const now = new Date();
-  const lastSunday = new Date(now);
-  lastSunday.setDate(now.getDate() - now.getDay());
-  const prevSunday = new Date(lastSunday);
-  prevSunday.setDate(lastSunday.getDate() - 7);
+  // Bi-weekly: last run was on the 1st or 15th
+  const day = now.getDate();
+  const cycleStart = new Date(now);
+  cycleStart.setDate(day < 15 ? 1 : 15);
+  const cycleEnd = new Date(now);
   const fmt = d => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-  return `${fmt(prevSunday)} – ${fmt(lastSunday)}`;
+  return `${fmt(cycleStart)} – ${fmt(cycleEnd)}`;
 }
 
 main().catch(err => {
